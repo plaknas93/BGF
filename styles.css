@@ -1,0 +1,10 @@
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    text-align: justify;
+}
+
+code,
+pre,
+.sourceCode {
+    font-family: "JetBrains Mono", monospace !important;
+}
