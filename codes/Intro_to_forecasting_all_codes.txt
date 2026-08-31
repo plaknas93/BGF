@@ -1,0 +1,121 @@
+## Code 1 ## 
+
+# Import Libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import statsmodels.api as sm
+
+# Load data
+df = pd.read_csv("/home/sankalpnaique/PyWorks/BGF/data/cement_sales.csv")
+
+# Display the first few observations
+df.head()
+
+## End ## 
+
+## Code 2 ##
+
+# Display the data types and non-null counts
+df.info()
+
+# Display summary statistics
+df.describe()
+
+## End ## 
+
+## Code 3 ##
+
+#Scatterplit Matrix
+sns.pairplot(
+    df[
+        [
+            "Cement_Sales_000_Tons",
+            "Advertising_Rs_Lakh",
+            "Housing_Starts_000_Units",
+            "Average_Cement_Price_Rs_Bag",
+            "Rainfall_mm",
+            "GDP_Growth_Percent",
+        ]
+    ],
+    diag_kind="hist",
+)
+
+plt.show()
+
+## End ## 
+
+## Code 4 ##
+
+# Correlation Matrix
+corr_matrix = df[
+    [
+        "Cement_Sales_000_Tons",
+        "Advertising_Rs_Lakh",
+        "Housing_Starts_000_Units",
+        "Average_Cement_Price_Rs_Bag",
+        "Rainfall_mm",
+        "GDP_Growth_Percent",
+    ]
+].corr()
+
+corr_matrix
+
+## End ## 
+
+## Code 5 ##
+
+# Heatmap
+
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", center=0)
+plt.show()
+
+## End ## 
+
+## Code 6 ##
+
+#MLR
+
+import statsmodels.api as sm
+
+# Define dependent and independent variables
+y = df["Cement_Sales_000_Tons"]
+
+X = df[
+    [
+        "Advertising_Rs_Lakh",
+        "Housing_Starts_000_Units",
+        "Average_Cement_Price_Rs_Bag",
+        "Rainfall_mm",
+        "GDP_Growth_Percent"
+    ]
+]
+
+# Add intercept
+X = sm.add_constant(X)
+
+# Fit MLR model
+model = sm.OLS(y, X).fit()
+
+# Display regression results
+print(model.summary())
+
+## End ## 
+
+## Code 7 ##
+
+#Time Series
+
+df["Quarter"] = pd.PeriodIndex(df["Quarter"], freq="Q")
+plt.figure(figsize=(10, 5))
+
+plt.plot(df["Quarter"].astype(str), df["Cement_Sales_000_Tons"], marker="o")
+
+plt.title("Quarterly Cement Sales")
+plt.xlabel("Quarter")
+plt.ylabel("Cement Sales (000 Tons)")
+
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
