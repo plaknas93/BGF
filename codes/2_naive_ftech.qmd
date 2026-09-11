@@ -1,0 +1,31 @@
+---
+title: "Introduction to Business Forecasting"
+author: "Dr. Sankalp Purushottam Naik"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-fold: false
+    code-copy: true
+    css: styles.css
+
+crossref:
+  lst-title: "Program"
+
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+  
+Naive forecasting methods are simple techniques that use historical data to predict future values. These methods are often used when there is limited data available or when the underlying patterns in the data are not well understood. In this section, we will explore some of the most commonly used naive forecasting methods, including the naive methods, moving average methods, exponential smoothing methods, Holt method and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.
+  
+# Data Generating Process
+  
+A data generating process (DGP) is a statistical model that describes how data is generated. It is a theoretical construct that helps us understand the underlying patterns and relationships in the data. In practice, we often do not know the true DGP, and we must rely on assumptions and approximations to make predictions. 
+
+
+
+# Case 1: We know nothing about the data generating process
