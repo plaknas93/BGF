@@ -1,0 +1,287 @@
+---
+title: "Classical Forecasting Techniques"
+subtitle: "Business Forecasting Notes"
+author: "Dr. Sankalp Purushottam Naik"
+date: today
+format:
+  pdf:
+    pdf-engine: lualatex
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - top=24mm
+      - bottom=24mm
+      - left=22mm
+      - right=22mm
+    toc: true
+    toc-title: "Contents"
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    linkcolor: RoyalBlue
+    urlcolor: RoyalBlue
+    citecolor: RoyalBlue
+    keep-tex: false
+    fig-pos: "H"
+    code-line-numbers: false
+    code-overflow: wrap
+    highlight-style: github
+    include-in-header:
+      text: |
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+        \usepackage{fancyhdr}
+        \usepackage{xcolor}
+        \usepackage{float}
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{tcolorbox}
+        \usepackage{fvextra}
+        \definecolor{ForecastBlue}{HTML}{1F4E79}
+        \definecolor{ForecastTeal}{HTML}{167D8D}
+        \definecolor{ForecastGold}{HTML}{D99A2B}
+        \definecolor{ForecastLight}{HTML}{EEF5F8}
+        \setmainfont{Noto Sans}
+        \setsansfont{Noto Sans}
+        \setmonofont{Noto Sans Mono}
+        \setmathfont{Latin Modern Math}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \fancyfoot[C]{\footnotesize\color{ForecastBlue} Business Forecasting Notes by Dr. Sankalp Naik}
+        \fancyfoot[R]{\footnotesize\thepage}
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0.4pt}
+        \addtokomafont{chapter}{\color{ForecastBlue}}
+        \addtokomafont{section}{\color{ForecastTeal}}
+        \addtokomafont{subsection}{\color{ForecastBlue}}
+        \AtBeginDocument{\renewcommand{\contentsname}{Index / Contents}}
+    include-before-body:
+      text: |
+        \thispagestyle{empty}
+        \begin{center}
+        \vspace*{2.8cm}
+        {\Huge\bfseries\color{ForecastBlue} Classical Forecasting Techniques\par}
+        \vspace{0.7cm}
+        {\Large Business Forecasting Notes\par}
+        \vspace{1.8cm}
+        {\Large\bfseries Dr. Sankalp Purushottam Naik\par}
+        \vfill
+        {\large Data Generating Processes • Naïve Methods • Moving Averages • Holt • Holt-Winters\par}
+        \vspace{1.0cm}
+        {\small Prepared as instructional notes for Business Forecasting\par}
+        \end{center}
+        \clearpage
+crossref:
+  lst-title: "Program"
+execute:
+  echo: true
+  warning: false
+  message: false
+jupyter: python3
+---
+
+::: {.callout-note title="📚 Source Attribution & Disclaimer" appearance="default"}
+These notes are prepared for **teaching and classroom use**. The conceptual treatment of forecasting methods draws substantially on *Forecasting: Principles and Practice* by **Rob J Hyndman and George Athanasopoulos**. The explanations, examples, Python implementations, classroom analogies, tables, and presentation structure in these notes have been adapted and developed for instructional purposes. Students are encouraged to consult the original text for a comprehensive treatment of forecasting theory and methods.
+:::
+
+Classical forecasting techniques are a set of methods used to predict future values based on historical data. These techniques are widely used in various fields, including finance, economics, and supply chain management. In this section, we will explore some of the most commonly used classical forecasting techniques, including naive methods, moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.
+
+# Data Generating Process (DGP)
+A data generating process (DGP) is a statistical model that describes how data is generated. It is a theoretical construct that helps us understand the underlying patterns and relationships in the data. In practice, we often do not know the true DGP, and we must rely on assumptions and approximations to make predictions. 
+
+Examples of DGPs include linear regression models, time series models, and stochastic processes. Understanding the DGP is crucial for selecting appropriate forecasting techniques and for interpreting the results of forecasts.
+
+## True DGP vs. Models
+True DGP refers to the actual process that generates the data, while models are simplified representations of the DGP that we use for forecasting. Models may not capture all the complexities of the true DGP, but they can still provide useful insights and predictions. It is important to evaluate the performance of models against the true DGP to ensure their accuracy and reliability.
+
+## Illustration 1: DGP and Models - Study Hours and Exam Scores
+Suppose we observe the following data for 10 students. Each student reports the number of hours they studied before an examination, and we observe their actual examination score.
+
+| Student | Study Hours | Actual Score |
+
+| ------: | ----------: | -----------: |
+
+|       1 |         1.5 |           43 |
+
+|       2 |         2.0 |           47 |
+
+|       3 |         3.5 |           56 |
+
+|       4 |         4.0 |           59 |
+
+|       5 |         5.5 |           68 |
+
+|       6 |         6.0 |           70 |
+
+|       7 |         7.5 |           78 |
+
+|       8 |         8.0 |           81 |
+
+|       9 |         9.5 |           87 |
+
+|      10 |        10.0 |           89 |
+
+At this stage, ****we make no assumptions about how the data were generated****.
+
+We simply observe the relationship between study hours and actual scores.
+
+### **Data Display and Scatter Plot**
+**::: {.callout-tip title="💻 Coding Session"}**
+
+```{python}
+
+#| echo: true
+
+#| output: true
+
+#| label: lst-dgp-1
+
+#| lst-cap: "Data Display and Scatter Plot"
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+# Create the dataset
+
+df = pd.DataFrame({
+
+    "Student": range(1, 11),
+
+    "Study_Hours": [1.5, 2.0, 3.5, 4.0, 5.5,
+
+                    6.0, 7.5, 8.0, 9.5, 10.0],
+
+    "Actual_Score": [43, 47, 56, 59, 68,
+
+                     70, 78, 81, 87, 89]
+
+})
+
+# Display the data
+
+display(df)
+
+# Create scatter plot
+
+plt.figure(figsize=(9, 5.5))
+
+plt.scatter(
+
+    df["Study_Hours"],
+
+    df["Actual_Score"],
+
+    s=80
+
+)
+
+plt.xlabel("Study Hours", fontsize=12)
+
+plt.ylabel("Actual Score", fontsize=12)
+
+plt.title(
+
+    "Relationship Between Study Hours and Exam Scores",
+
+    fontsize=14,
+
+    pad=15
+
+)
+
+plt.grid(alpha=0.2)
+
+plt.tight_layout()
+
+plt.show()
+
+```
+
+**:::**
+
+### What do we see?
+The scatter plot suggests a ****positive relationship**** between study hours and examination scores.
+
+Students who study more tend to obtain higher scores.
+
+However, the relationship is ****not perfectly deterministic****.
+
+For example, students who study a similar number of hours do not necessarily obtain exactly the same score.
+
+This suggests that something systematic is happening, but there is also some randomness in the data.
+
+### Signal and Noise
+We can think of the observed score as consisting of two components:
+
+$$
+
+\boxed{\text{Observed Data} = \text{Signal} + \text{Noise}}
+
+$$
+
+*****Signal*****
+
+The ****signal**** is the systematic pattern in the data.
+
+In our example, the signal is the tendency for examination scores to increase as study hours increase.
+
+*****Noise*****
+
+The ****noise**** is the random variation around the systematic pattern.
+
+Even if two students study for approximately the same amount of time, their scores may differ because of:
+
+* Prior knowledge
+
+* Individual ability
+
+* Concentration
+
+* Exam difficulty
+
+* Luck
+
+* Other factors
+
+Therefore, we do not expect every observation to lie exactly on the underlying relationship.
+
+### Capturing the Signal with Linear Regression
+One simple way to capture the systematic component of the relationship is ****linear regression****.
+
+We specify:
+
+$$
+
+Score_i = \beta_0 + \beta_1 StudyHours_i + \varepsilon_i
+
+$$
+
+where:
+
+* $\beta_0$ represents the intercept
+
+* $\beta_1$ represents the effect of study hours
+
+* $\varepsilon_i$ represents the noise
+
+The regression model attempts to identify the ****signal**** while treating the remaining variation as noise.
+
+In estimated form:
+
+$$
+
+\widehat{Score}_i
+
+\=
+
+\hat{\beta}_0
+
+\+
+
+\hat{\beta}_1 StudyHours_i
+
+$$
+
