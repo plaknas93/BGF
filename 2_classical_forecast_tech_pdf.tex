@@ -1,0 +1,539 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+  a4paper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage[top=24mm,bottom=24mm,left=22mm,right=22mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\underline{#1}}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{\textbf{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.89,0.38,0.04}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{#1}}
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tcolorbox}
+\usepackage{fvextra}
+\definecolor{ForecastBlue}{HTML}{1F4E79}
+\definecolor{ForecastTeal}{HTML}{167D8D}
+\definecolor{ForecastGold}{HTML}{D99A2B}
+\definecolor{ForecastLight}{HTML}{EEF5F8}
+\setmainfont{Noto Sans}
+\setsansfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
+\setmathfont{Latin Modern Math}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\footnotesize\color{ForecastBlue} Business Forecasting Notes by Dr. Sankalp Naik}
+\fancyfoot[R]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\addtokomafont{chapter}{\color{ForecastBlue}}
+\addtokomafont{section}{\color{ForecastTeal}}
+\addtokomafont{subsection}{\color{ForecastBlue}}
+\AtBeginDocument{\renewcommand{\contentsname}{Index / Contents}}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Program}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Classical Forecasting Techniques},
+  pdfauthor={Dr.~Sankalp Purushottam Naik},
+  colorlinks=true,
+  linkcolor={RoyalBlue},
+  filecolor={Maroon},
+  citecolor={RoyalBlue},
+  urlcolor={RoyalBlue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Classical Forecasting Techniques}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Business Forecasting Notes}
+\author{Dr.~Sankalp Purushottam Naik}
+\date{2026-09-28}
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+\begin{center}
+\vspace*{2.8cm}
+{\Huge\bfseries\color{ForecastBlue} Classical Forecasting Techniques\par}
+\vspace{0.7cm}
+{\Large Business Forecasting Notes\par}
+\vspace{1.8cm}
+{\Large\bfseries Dr. Sankalp Purushottam Naik\par}
+\vfill
+{\large Data Generating Processes • Naïve Methods • Moving Averages • Holt • Holt-Winters\par}
+\vspace{1.0cm}
+{\small Prepared as instructional notes for Business Forecasting\par}
+\end{center}
+\clearpage
+
+\renewcommand*\contentsname{Contents}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{📚 Source Attribution \& Disclaimer}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+These notes are prepared for \textbf{teaching and classroom use}. The
+conceptual treatment of forecasting methods draws substantially on
+\emph{Forecasting: Principles and Practice} by \textbf{Rob J Hyndman and
+George Athanasopoulos}. The explanations, examples, Python
+implementations, classroom analogies, tables, and presentation structure
+in these notes have been adapted and developed for instructional
+purposes. Students are encouraged to consult the original text for a
+comprehensive treatment of forecasting theory and methods.
+
+\end{tcolorbox}
+
+Classical forecasting techniques are a set of methods used to predict
+future values based on historical data. These techniques are widely used
+in various fields, including finance, economics, and supply chain
+management. In this section, we will explore some of the most commonly
+used classical forecasting techniques, including naive methods, moving
+average methods, exponential smoothing methods, Holt method, and
+Holt-Winters methods. We will also discuss their advantages and
+limitations, as well as how to implement them in practice.
+
+\chapter{Data Generating Process
+(DGP)}\label{data-generating-process-dgp}
+
+A data generating process (DGP) is a statistical model that describes
+how data is generated. It is a theoretical construct that helps us
+understand the underlying patterns and relationships in the data. In
+practice, we often do not know the true DGP, and we must rely on
+assumptions and approximations to make predictions.
+
+Examples of DGPs include linear regression models, time series models,
+and stochastic processes. Understanding the DGP is crucial for selecting
+appropriate forecasting techniques and for interpreting the results of
+forecasts.
+
+\section{True DGP vs.~Models}\label{true-dgp-vs.-models}
+
+True DGP refers to the actual process that generates the data, while
+models are simplified representations of the DGP that we use for
+forecasting. Models may not capture all the complexities of the true
+DGP, but they can still provide useful insights and predictions. It is
+important to evaluate the performance of models against the true DGP to
+ensure their accuracy and reliability.
+
+\section{Illustration 1: DGP and Models - Study Hours and Exam
+Scores}\label{illustration-1-dgp-and-models---study-hours-and-exam-scores}
+
+Suppose we observe the following data for 10 students. Each student
+reports the number of hours they studied before an examination, and we
+observe their actual examination score.
+
+Student \textbar{} Study Hours \textbar{} Actual Score \textbar{}
+
+------: \textbar{} ----------: \textbar{} -----------: \textbar{}
+
+~~~~~~1 \textbar{} 1.5 \textbar{} 43 \textbar{}
+
+~~~~~~2 \textbar{} 2.0 \textbar{} 47 \textbar{}
+
+~~~~~~3 \textbar{} 3.5 \textbar{} 56 \textbar{}
+
+~~~~~~4 \textbar{} 4.0 \textbar{} 59 \textbar{}
+
+~~~~~~5 \textbar{} 5.5 \textbar{} 68 \textbar{}
+
+~~~~~~6 \textbar{} 6.0 \textbar{} 70 \textbar{}
+
+~~~~~~7 \textbar{} 7.5 \textbar{} 78 \textbar{}
+
+~~~~~~8 \textbar{} 8.0 \textbar{} 81 \textbar{}
+
+~~~~~~9 \textbar{} 9.5 \textbar{} 87 \textbar{}
+
+~~~~~10 \textbar{} 10.0 \textbar{} 89 \textbar{}
+
+At this stage, ****we make no assumptions about how the data were
+generated****.
+
+We simply observe the relationship between study hours and actual
+scores.
+
+\subsection{\texorpdfstring{\textbf{Data Display and Scatter
+Plot}}{Data Display and Scatter Plot}}\label{data-display-and-scatter-plot}
+
+\textbf{::: \{.callout-tip title=``💻 Coding Session''\}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#| output: true}
+
+\CommentTok{\#| label: lst{-}dgp{-}1}
+
+\CommentTok{\#| lst{-}cap: "Data Display and Scatter Plot"}
+
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+
+\CommentTok{\# Create the dataset}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(}
+\NormalTok{    \{}
+        \StringTok{"Student"}\NormalTok{: }\BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{11}\NormalTok{),}
+        \StringTok{"Study\_Hours"}\NormalTok{: [}\FloatTok{1.5}\NormalTok{, }\FloatTok{2.0}\NormalTok{, }\FloatTok{3.5}\NormalTok{, }\FloatTok{4.0}\NormalTok{, }\FloatTok{5.5}\NormalTok{, }\FloatTok{6.0}\NormalTok{, }\FloatTok{7.5}\NormalTok{, }\FloatTok{8.0}\NormalTok{, }\FloatTok{9.5}\NormalTok{, }\FloatTok{10.0}\NormalTok{],}
+        \StringTok{"Actual\_Score"}\NormalTok{: [}\DecValTok{43}\NormalTok{, }\DecValTok{47}\NormalTok{, }\DecValTok{56}\NormalTok{, }\DecValTok{59}\NormalTok{, }\DecValTok{68}\NormalTok{, }\DecValTok{70}\NormalTok{, }\DecValTok{78}\NormalTok{, }\DecValTok{81}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{89}\NormalTok{],}
+\NormalTok{    \}}
+\NormalTok{)}
+
+\CommentTok{\# Display the data}
+
+\BuiltInTok{print}\NormalTok{(df)}
+
+\CommentTok{\# Create scatter plot}
+
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{9}\NormalTok{, }\FloatTok{5.5}\NormalTok{))}
+
+\NormalTok{plt.scatter(df[}\StringTok{"Study\_Hours"}\NormalTok{], df[}\StringTok{"Actual\_Score"}\NormalTok{], s}\OperatorTok{=}\DecValTok{80}\NormalTok{)}
+
+\NormalTok{plt.xlabel(}\StringTok{"Study Hours"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+
+\NormalTok{plt.ylabel(}\StringTok{"Actual Score"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+
+\NormalTok{plt.title(}\StringTok{"Relationship Between Study Hours and Exam Scores"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{14}\NormalTok{, pad}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
+
+\NormalTok{plt.grid(alpha}\OperatorTok{=}\FloatTok{0.2}\NormalTok{)}
+
+\NormalTok{plt.tight\_layout()}
+
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Student  Study_Hours  Actual_Score
+0        1          1.5            43
+1        2          2.0            47
+2        3          3.5            56
+3        4          4.0            59
+4        5          5.5            68
+5        6          6.0            70
+6        7          7.5            78
+7        8          8.0            81
+8        9          9.5            87
+9       10         10.0            89
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{2_classical_forecast_tech_pdf_files/figure-pdf/cell-2-output-2.pdf}}
+
+\textbf{:::}
+
+\subsection{What do we see?}\label{what-do-we-see}
+
+The scatter plot suggests a ****positive relationship**** between study
+hours and examination scores.
+
+Students who study more tend to obtain higher scores.
+
+However, the relationship is ****not perfectly deterministic****.
+
+For example, students who study a similar number of hours do not
+necessarily obtain exactly the same score.
+
+This suggests that something systematic is happening, but there is also
+some randomness in the data.
+
+\subsection{Signal and Noise}\label{signal-and-noise}
+
+We can think of the observed score as consisting of two components:
+
+\$\$
+
+\boxed{\text{Observed Data} = \text{Signal} + \text{Noise}}
+
+\$\$
+
+*****Signal*****
+
+The ****signal**** is the systematic pattern in the data.
+
+In our example, the signal is the tendency for examination scores to
+increase as study hours increase.
+
+*****Noise*****
+
+The ****noise**** is the random variation around the systematic pattern.
+
+Even if two students study for approximately the same amount of time,
+their scores may differ because of:
+
+\begin{itemize}
+\item
+  Prior knowledge
+\item
+  Individual ability
+\item
+  Concentration
+\item
+  Exam difficulty
+\item
+  Luck
+\item
+  Other factors
+\end{itemize}
+
+Therefore, we do not expect every observation to lie exactly on the
+underlying relationship.
+
+\subsection{Capturing the Signal with Linear
+Regression}\label{capturing-the-signal-with-linear-regression}
+
+One simple way to capture the systematic component of the relationship
+is ****linear regression****.
+
+We specify:
+
+\$\$
+
+Score\_i = \beta\_0 + \beta\_1 StudyHours\_i + \varepsilon\_i
+
+\$\$
+
+where:
+
+\begin{itemize}
+\item
+  \(\beta_0\) represents the intercept
+\item
+  \(\beta_1\) represents the effect of study hours
+\item
+  \(\varepsilon_i\) represents the noise
+\end{itemize}
+
+The regression model attempts to identify the ****signal**** while
+treating the remaining variation as noise.
+
+In estimated form:
+
+\$\$
+
+\widehat{Score}\_i
+
+=
+
+\hat{\beta}\_0
+
++
+
+\hat{\beta}\_1 StudyHours\_i
+
+\$\$
+
+
+
+
+\end{document}
