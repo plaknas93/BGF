@@ -535,7 +535,7 @@ Dep. Variable:           Actual_Score   R-squared:                       0.994
 Model:                            OLS   Adj. R-squared:                  0.994
 Method:                 Least Squares   F-statistic:                     1423.
 Date:                Tue, 29 Sep 2026   Prob (F-statistic):           2.68e-10
-Time:                        02:16:01   Log-Likelihood:                -15.587
+Time:                        03:04:48   Log-Likelihood:                -15.587
 No. Observations:                  10   AIC:                             35.17
 Df Residuals:                       8   BIC:                             35.78
 Df Model:                           1                                         
@@ -1056,7 +1056,7 @@ s=4
 </section>
 <section id="smoothing-forecasting-techniques" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Smoothing Forecasting Techniques</h1>
-<p>Smoothing forecasting techniques are a set of methods that use weighted averages of past observations to make predictions about future values. These techniques are particularly useful for time series data that exhibit trends or seasonality. In this section, we will explore some of the most commonly used smoothing forecasting techniques, including moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.</p>
+<p>Smoothing forecasting techniques are a set of methods that use weighted averages of past observations to make predictions about future values. These techniques are particularly useful for time series data that exhibit an inherent level. In this section, we will explore some of the most commonly used smoothing forecasting techniques, including moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.</p>
 <section id="moving-average-methods" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="moving-average-methods"><span class="header-section-number">3.1</span> Moving Average Methods</h2>
 <p>Moving average methods are a simple smoothing technique that calculates the average of a fixed number of past observations to make predictions about future values. The moving average can be calculated using different window sizes, which determines how many past observations are included in the average. This method is particularly useful for time series data that exhibit short-term fluctuations or noise, as it helps to smooth out the data and reveal underlying trends.</p>
@@ -1140,7 +1140,7 @@ s=4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="fa795cd7" class="cell" data-execution_count="6">
+<div id="93092b1a" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
