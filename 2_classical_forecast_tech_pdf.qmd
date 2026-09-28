@@ -3,9 +3,12 @@ title: "Classical Forecasting Techniques"
 author: "Dr. Sankalp Purushottam Naik"
 
 format:
-  typst:
+  pdf:
+    documentclass: scrbook
+    pdf-engine: lualatex
     toc: true
     number-sections: true
+    keep-tex: true
 
 crossref:
   lst-title: "Program"

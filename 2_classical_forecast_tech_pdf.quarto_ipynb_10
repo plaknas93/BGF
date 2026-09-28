@@ -9,13 +9,9 @@
         "author: \"Dr. Sankalp Purushottam Naik\"\n",
         "\n",
         "format:\n",
-        "  html:\n",
-        "    theme: cosmo\n",
+        "  typst:\n",
         "    toc: true\n",
         "    number-sections: true\n",
-        "    code-fold: false\n",
-        "    code-copy: true\n",
-        "    css: styles.css\n",
         "\n",
         "crossref:\n",
         "  lst-title: \"Program\"\n",
@@ -64,7 +60,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "e4b15263"
+      "id": "e91ed1f3"
     },
     {
       "cell_type": "code",
@@ -199,7 +195,7 @@
         "   \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "7be1a663"
+      "id": "651300f3"
     },
     {
       "cell_type": "code",
@@ -245,7 +241,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}\n"
       ],
-      "id": "da848e2c"
+      "id": "7632678d"
     },
     {
       "cell_type": "code",
@@ -449,7 +445,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "a35222c2"
+      "id": "7320d90d"
     },
     {
       "cell_type": "code",
@@ -567,7 +563,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "6cebc7ff"
+      "id": "22380476"
     },
     {
       "cell_type": "code",
@@ -694,7 +690,7 @@
         "\n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "0dc61d04"
+      "id": "9f643e20"
     },
     {
       "cell_type": "code",
@@ -796,7 +792,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "95a20c3e",
+      "id": "04ef7794",
       "execution_count": null,
       "outputs": []
     },
@@ -875,7 +871,7 @@
         "\n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "99983aa7"
+      "id": "9179e40e"
     },
     {
       "cell_type": "code",
@@ -978,7 +974,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}\n"
       ],
-      "id": "906335d6"
+      "id": "7216b664"
     },
     {
       "cell_type": "code",
@@ -1069,7 +1065,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "0702e092"
+      "id": "9aa7f6ac"
     },
     {
       "cell_type": "code",
@@ -1116,7 +1112,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "7d940a66",
+      "id": "d0141725",
       "execution_count": null,
       "outputs": []
     },
@@ -1136,7 +1132,7 @@
         "\n",
         "> **The key idea:** Each model adds another component of the underlying time-series pattern."
       ],
-      "id": "b3c2fb9a"
+      "id": "8798a31a"
     }
   ],
   "metadata": {

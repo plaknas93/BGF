@@ -8,3 +8,117 @@ pre,
 .sourceCode {
     font-family: "JetBrains Mono", monospace !important;
 }
+
+/* ================================================================
+   PRINT / PDF LAYOUT
+   The HTML remains the master layout. These rules only affect print.
+   ================================================================ */
+
+@media print {
+
+  @page {
+    size: A4 landscape;
+    margin: 14mm 15mm 15mm 15mm;
+  }
+
+  html, body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* --------------------------------------------------------------
+     Book-style cover: use Quarto's existing title block.
+     -------------------------------------------------------------- */
+  header#title-block-header {
+    min-height: 165mm !important;
+    height: 165mm !important;
+    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    break-after: page;
+    page-break-after: always;
+    padding: 20mm 25mm !important;
+  }
+
+  header#title-block-header .title {
+    font-size: 30pt !important;
+    line-height: 1.12 !important;
+    margin-bottom: 12mm !important;
+  }
+
+  header#title-block-header .author {
+    font-size: 15pt !important;
+  }
+
+  /* Keep the generated TOC on its own page before the notes. */
+  nav#TOC {
+    break-after: page;
+    page-break-after: always;
+  }
+
+  /* Avoid lonely headings at the bottom of a page. */
+  h1, h2, h3, h4 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* --------------------------------------------------------------
+     Critical fix for the Coding Session boxes:
+     allow the box to flow across pages instead of forcing a very
+     large code+output unit to remain intact.
+     -------------------------------------------------------------- */
+  .callout,
+  .callout-body,
+  .callout-content,
+  .cell,
+  .sourceCode {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .callout-header {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Keep individual charts/tables together where practical. */
+  figure,
+  .cell-output-display,
+  table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Slightly compact code for paper without changing screen HTML. */
+  pre,
+  pre.sourceCode,
+  code {
+    font-size: 0.82em !important;
+    line-height: 1.18 !important;
+  }
+
+  pre {
+    overflow: visible !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  /* Keep captions close to figures. */
+  figcaption {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  /* Better paragraph widows/orphans. */
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+}
