@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Business Forecasting"
+title: "Introduction to Business Forecasting & Time Series Analysis"
 author: "Dr. Sankalp Purushottam Naik"
 
 format:
@@ -505,12 +505,47 @@ plt.show()
 ```
 :::
 
-
-# Decomposition of Time Series
-
-In TS we look for:
+The evolution of cement sales (or any data series) over time is rarely random. It often reflects underlying patterns - a story of the past, present and future. 
+ 
+Time series analysis is about uncovering these patterns and using them to make informed predictions about the future.
+   
+# 📊 Time-Series Analysis 
+    
+## 🔍 Looking Inside a Time Series: Decomposition
+    
+A time series is rarely just a collection of random observations.
+    
+When we observe a variable over time, its movements may reflect several underlying patterns.
   
-- **Trend** — Is sales generally increasing or decreasing?
-- **Seasonality** — Does a pattern repeat at regular intervals?
-- **Cycles** — Are there longer-term rises and falls?
-- **Unusual observations** — Are there unexpected spikes or drops?
+For our **quarterly cement sales**, we might observe:
+  
+- 📈 a long-term increase in sales,
+- 🔄 a recurring quarterly pattern,  
+- 🌊 longer-term fluctuations, and  
+- ⚡ unexpected shocks.  
+  
+**Time-series decomposition** gives us a way to separate these different sources of variation.
+  
+> 💡 **Think of decomposition as taking a complicated time series apart to understand what is happening inside it.**
+    
+### 🧩 The Four Components of a Time Series
+  
+| Component | Icon | The question we are asking |
+|---|---|---|
+| **Trend** | 📈 | Is the series moving upward or downward over the long run? |
+| **Seasonality** | 🔄 | Does a pattern repeat at a regular frequency? |
+| **Cycle** | 🌊 | Are there longer-term rises and falls? |
+| **Irregular** | ⚡ | What unusual movements remain unexplained? |
+    
+### 🧠 The Big Picture
+
+Think of the observed series as a combination of different patterns:
+  
+$$
+\boxed{\text{Observed} = \text{Trend} + \text{Seasonality} + \text{Irregular}}
+$$
+  
+*Note:* In some cases, we may also include a **cycle** component, but for simplicity, we will focus on the three main components: trend, seasonality, and irregular (also called randomness or noise or random noise).
+  
+For the moment, we will focus on the **additive decomposition**.
+   
