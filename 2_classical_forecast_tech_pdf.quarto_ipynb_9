@@ -7,15 +7,32 @@
         "---\n",
         "title: \"Classical Forecasting Techniques\"\n",
         "author: \"Dr. Sankalp Purushottam Naik\"\n",
+        "date: today\n",
         "\n",
         "format:\n",
-        "  html:\n",
-        "    theme: cosmo\n",
+        "  pdf:\n",
+        "    documentclass: article\n",
+        "    papersize: a4\n",
+        "    geometry:\n",
+        "      - top=25mm\n",
+        "      - bottom=25mm\n",
+        "      - left=20mm\n",
+        "      - right=20mm\n",
         "    toc: true\n",
+        "    toc-depth: 3\n",
         "    number-sections: true\n",
-        "    code-fold: false\n",
-        "    code-copy: true\n",
-        "    css: styles.css\n",
+        "    colorlinks: true\n",
+        "    include-in-header:\n",
+        "      text: |\n",
+        "        \\usepackage{fancyhdr}\n",
+        "        \\pagestyle{fancy}\n",
+        "        \\fancyhf{}\n",
+        "        \\rhead{\\scriptsize Classical Forecasting Techniques}\n",
+        "        \\lhead{\\scriptsize Dr. Sankalp Purushottam Naik}\n",
+        "        \\rfoot{\\thepage}\n",
+        "        \\lfoot{\\scriptsize Business Forecasting Notes by Dr. Sankalp Naik}\n",
+        "        \\renewcommand{\\headrulewidth}{0.4pt}\n",
+        "        \\renewcommand{\\footrulewidth}{0.4pt}\n",
         "\n",
         "crossref:\n",
         "  lst-title: \"Program\"\n",
@@ -24,7 +41,11 @@
         "  echo: true\n",
         "  warning: false\n",
         "  message: false\n",
+        "  fig-width: 7\n",
+        "  fig-height: 4\n",
         "---\n",
+        "\n",
+        "\\thispagestyle{fancy}\n",
         "\n",
         "Classical forecasting techniques are a set of methods used to predict future values based on historical data. These techniques are widely used in various fields, including finance, economics, and supply chain management. In this section, we will explore some of the most commonly used classical forecasting techniques, including naive methods, moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.\n",
         "\n",
@@ -64,7 +85,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "426b071b"
+      "id": "261eee6f"
     },
     {
       "cell_type": "code",
@@ -199,7 +220,7 @@
         "   \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "7bf45d67"
+      "id": "9fee8445"
     },
     {
       "cell_type": "code",
@@ -245,7 +266,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}\n"
       ],
-      "id": "f807a7c5"
+      "id": "a1f46717"
     },
     {
       "cell_type": "code",
@@ -447,9 +468,9 @@
         "\n",
         "***Visualizing the Data***\n",
         "  \n",
-        ":::{.callout-tip title=\"💻 Coding Session\"}"
+        "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "38f1c68c"
+      "id": "f4af3b79"
     },
     {
       "cell_type": "code",
@@ -562,12 +583,12 @@
         "Using the **Seasonal Naïve Forecasting Method**, what would you forecast for each quarter of 2026?\n",
         "\n",
         "***Answer***\n",
-        "  \n",
+        "\n",
         "***Visualizing the Data***\n",
-        "    \n",
+        "\n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "7aca09f0"
+      "id": "1d1fb011"
     },
     {
       "cell_type": "code",
@@ -577,8 +598,70 @@
         "#| output: true\n",
         "#| label: lst-seasonal_naive_plot\n",
         "#| lst-cap: Quarterly Sales and Seasonality\n",
-        "  \n",
+        "\n",
         "import pandas as pd\n",
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "# Create the dataset\n",
+        "df = pd.DataFrame(\n",
+        "    {\n",
+        "        \"Year\": [2024] * 4 + [2025] * 4,\n",
+        "        \"Quarter\": [\"Q1\", \"Q2\", \"Q3\", \"Q4\"] * 2,\n",
+        "        \"Sales\": [100, 120, 105, 145, 98, 122, 103, 148],\n",
+        "    }\n",
+        ")\n",
+        "\n",
+        "# Create a sequential time-period variable\n",
+        "df[\"Period\"] = range(1, len(df) + 1)\n",
+        "\n",
+        "# Plot quarterly sales\n",
+        "plt.figure(figsize=(10, 5))\n",
+        "plt.plot(df[\"Period\"], df[\"Sales\"], marker=\"o\")\n",
+        "plt.xticks(\n",
+        "    df[\"Period\"],\n",
+        "    [f\"{year} {quarter}\" for year, quarter in zip(df[\"Year\"], df[\"Quarter\"])],\n",
+        ")\n",
+        "plt.xlabel(\"Quarter\")\n",
+        "plt.ylabel(\"Sales (₹ lakh)\")\n",
+        "plt.title(\"Quarterly Sales: 2024–2025\")\n",
+        "plt.grid(True, alpha=0.3)\n",
+        "plt.tight_layout()\n",
+        "plt.show()"
+      ],
+      "id": "lst-seasonal_naive_plot",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        ":::\n",
+        "\n",
+        "For quarterly data, the seasonal cycle is **4 quarters**:\n",
+        "\n",
+        "$$\n",
+        "s = 4\n",
+        "$$\n",
+        "\n",
+        "Therefore, the seasonal naïve forecast is:\n",
+        "\n",
+        "$$\n",
+        "\\boxed{F_t = Y_{t-4}}\n",
+        "$$\n",
+        "\n",
+        "So:\n",
+        "\n",
+        "| Quarter | 2026 Forecast (₹ lakh) | Based On |\n",
+        "| :-----: | ---------------------: | :------- |\n",
+        "|    Q1   |                 **98** | 2025 Q1  |\n",
+        "|    Q2   |                **122** | 2025 Q2  |\n",
+        "|    Q3   |                **103** | 2025 Q3  |\n",
+        "|    Q4   |                **148** | 2025 Q4  |\n",
+        "\n",
+        "**Key idea:** Instead of using the **immediately preceding observation**, the seasonal naïve method uses the observation from the **same season in the previous cycle**.\n",
+        "\n",
+        "\n",
         "import matplotlib.pyplot as plt\n",
         "  \n",
         "# Create the dataset\n",
@@ -611,16 +694,8 @@
         "  \n",
         "plt.grid(True, alpha=0.3)\n",
         "plt.tight_layout()\n",
-        "plt.show()"
-      ],
-      "id": "lst-seasonal_naive_plot",
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "markdown",
-      "metadata": {},
-      "source": [
+        "plt.show()\n",
+        "```\n",
         "::: \n",
         "      \n",
         "For quarterly data, the seasonal cycle is **4 quarters**:\n",
@@ -692,9 +767,9 @@
         "\n",
         "**Visualizing the Data**\n",
         "\n",
-        ":::{.callout-tip title=\"💻 Coding Session\"}"
+        "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "48d7344e"
+      "id": "2e099788"
     },
     {
       "cell_type": "code",
@@ -796,7 +871,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "00fae7ca",
+      "id": "e90fec0a",
       "execution_count": null,
       "outputs": []
     },
@@ -875,7 +950,7 @@
         "\n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "a6acc226"
+      "id": "d7f2065c"
     },
     {
       "cell_type": "code",
@@ -978,7 +1053,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}\n"
       ],
-      "id": "2530273b"
+      "id": "3ac4ad80"
     },
     {
       "cell_type": "code",
@@ -1069,7 +1144,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "9329d955"
+      "id": "75dc6517"
     },
     {
       "cell_type": "code",
@@ -1116,7 +1191,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "a7d5246a",
+      "id": "7569905b",
       "execution_count": null,
       "outputs": []
     },
@@ -1136,7 +1211,7 @@
         "\n",
         "> **The key idea:** Each model adds another component of the underlying time-series pattern."
       ],
-      "id": "53ca553d"
+      "id": "520ce170"
     }
   ],
   "metadata": {

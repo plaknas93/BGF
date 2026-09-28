@@ -1,61 +1,11 @@
 ---
-title: "Business Forecasting Notes"
-subtitle: "Classical Forecasting Techniques"
+title: "Classical Forecasting Techniques"
 author: "Dr. Sankalp Purushottam Naik"
-date: today
 
 format:
-  pdf:
-    documentclass: report
-    papersize: a4
-    geometry:
-      - top=25mm
-      - bottom=25mm
-      - left=20mm
-      - right=20mm
+  typst:
     toc: true
-    toc-depth: 3
     number-sections: true
-    colorlinks: true
-    linkcolor: RoyalBlue
-    urlcolor: RoyalBlue
-    code-copy: true
-    highlight-style: breeze
-    include-in-header:
-      text: |
-        \usepackage{xcolor}
-        \definecolor{branddark}{HTML}{0F172A}
-        \definecolor{brandblue}{HTML}{1E3A8A}
-        \definecolor{brandcyan}{HTML}{0284C7}
-        \definecolor{brandgray}{HTML}{475569}
-        \definecolor{bglight}{HTML}{F8FAFC}
-
-        \usepackage{fancyhdr}
-        \pagestyle{fancy}
-        \fancyhf{}
-        \rhead{\textcolor{brandgray}{\scriptsize Classical Forecasting Techniques}}
-        \lhead{\textcolor{brandgray}{\scriptsize Dr. Sankalp Purushottam Naik}}
-        \rfoot{\thepage}
-        \lfoot{\textcolor{brandblue}{\scriptsize \bfseries Business Forecasting Notes by Sankalp Naik}}
-        \renewcommand{\headrulewidth}{0.5pt}
-        \renewcommand{\footrulewidth}{0.5pt}
-
-        \usepackage{titlesec}
-        \titleformat{\chapter}[display]
-          {\normalfont\Huge\bfseries\color{brandblue}}{\chaptertitlename\ \thechapter}{10pt}{\Huge}
-        \titleformat{\section}
-          {\normalfont\Large\bfseries\color{brandblue}}{\thesection}{1em}{}
-        \titleformat{\subsection}
-          {\normalfont\large\bfseries\color{brandcyan}}{\thesubsection}{1em}{}
-
-        \usepackage{framed}
-        \renewenvironment{leftbar}[1][\linecolor]
-          {%
-            \def\linecolor{#1}%
-            \def\FrameCommand{{\color{\linecolor}\vrule width 3pt}\hspace{10pt}}%
-            \MakeFramed {\advance\hsize-\width \FrameRestore}%
-          }%
-          {\endMakeFramed}
 
 crossref:
   lst-title: "Program"
@@ -65,44 +15,6 @@ execute:
   warning: false
   message: false
 ---
-
-\begin{titlepage}
-\centering
-\vspace*{2cm}
-
-{\Huge \bfseries \color{brandblue} Business Forecasting Notes} \\[0.6cm]
-{\Large \bfseries \color{brandcyan} Comprehensive Chapter Guide \& Python Implementations} \\[1.8cm]
-
-\rule{\linewidth}{1.5pt} \\[2cm]
-
-{\Large \textbf{Dr. Sankalp Purushottam Naik}} \\[0.4cm]
-{\small \color{brandgray} Academic & Professional Lecture Series} \\[4cm]
-
-\vfill
-\begin{tcolorbox}[colback=bglight,colframe=brandcyan,arc=4mm,boxrule=1pt,width=0.85\linewidth]
-\centering
-\small \color{branddark} \textbf{Business Forecasting Notes by Sankalp Naik} \\
-\scriptsize A structured guide on time-series dynamics, predictive modeling, and empirical workflows.
-\end{tcolorbox}
-
-\vspace*{1cm}
-{\small \color{brandgray} \today}
-\end{titlepage}
-
-\newpage
-\thispagestyle{fancy}
-
-::: {.callout-note}
-This course is designed to help students get started with Python programming. The target audience includes students with little or no programming experience, as well as those pursuing studies in analytics, data science, business, or finance.
-  
-The course covers the fundamentals of Python programming, including syntax, variables, data types, operators, control structures, functions, and modules. By the end of the course, students will have a solid foundation in Python and will be able to write simple programs to solve practical problems.
-  
-This course is not intended for learners seeking advanced software development or software engineering concepts.
-  
-For effective learning, students are encouraged to practice the code examples alongside the material covered in the course.
-
-Happy learning!
-:::
 
 Classical forecasting techniques are a set of methods used to predict future values based on historical data. These techniques are widely used in various fields, including finance, economics, and supply chain management. In this section, we will explore some of the most commonly used classical forecasting techniques, including naive methods, moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.
 
@@ -494,7 +406,7 @@ Using the **Naïve Forecasting Method**, what would you predict the October mont
 
 ***Visualizing the Data***
   
-::: {.callout-tip title="💻 Coding Session"}
+:::{.callout-tip title="💻 Coding Session"}
 
 ```{python}
 #| echo: true
@@ -596,9 +508,9 @@ Suppose the quarterly sales of a company are as follows:
 Using the **Seasonal Naïve Forecasting Method**, what would you forecast for each quarter of 2026?
 
 ***Answer***
-
+  
 ***Visualizing the Data***
-
+    
 ::: {.callout-tip title="💻 Coding Session"}
 
 ```{python}
@@ -606,62 +518,8 @@ Using the **Seasonal Naïve Forecasting Method**, what would you forecast for ea
 #| output: true
 #| label: lst-seasonal_naive_plot
 #| lst-cap: "Quarterly Sales and Seasonality"
-
+  
 import pandas as pd
-import matplotlib.pyplot as plt
-
-# Create the dataset
-df = pd.DataFrame(
-    {
-        "Year": [2024] * 4 + [2025] * 4,
-        "Quarter": ["Q1", "Q2", "Q3", "Q4"] * 2,
-        "Sales": [100, 120, 105, 145, 98, 122, 103, 148],
-    }
-)
-
-# Create a sequential time-period variable
-df["Period"] = range(1, len(df) + 1)
-
-# Plot quarterly sales
-plt.figure(figsize=(10, 5))
-plt.plot(df["Period"], df["Sales"], marker="o")
-plt.xticks(
-    df["Period"],
-    [f"{year} {quarter}" for year, quarter in zip(df["Year"], df["Quarter"])],
-)
-plt.xlabel("Quarter")
-plt.ylabel("Sales (₹ lakh)")
-plt.title("Quarterly Sales: 2024–2025")
-plt.grid(True, alpha=0.3)
-plt.tight_layout()
-plt.show()
-```
-:::
-
-For quarterly data, the seasonal cycle is **4 quarters**:
-
-$$
-s = 4
-$$
-
-Therefore, the seasonal naïve forecast is:
-
-$$
-\boxed{F_t = Y_{t-4}}
-$$
-
-So:
-
-| Quarter | 2026 Forecast (₹ lakh) | Based On |
-| :-----: | ---------------------: | :------- |
-|    Q1   |                 **98** | 2025 Q1  |
-|    Q2   |                **122** | 2025 Q2  |
-|    Q3   |                **103** | 2025 Q3  |
-|    Q4   |                **148** | 2025 Q4  |
-
-**Key idea:** Instead of using the **immediately preceding observation**, the seasonal naïve method uses the observation from the **same season in the previous cycle**.
-
-
 import matplotlib.pyplot as plt
   
 # Create the dataset
@@ -767,7 +625,7 @@ Using the quarterly automobile sales dataset (`automobile_sales.csv`), inspect t
 
 **Visualizing the Data**
 
-::: {.callout-tip title="💻 Coding Session"}
+:::{.callout-tip title="💻 Coding Session"}
 
 ```{python}
 #| echo: true

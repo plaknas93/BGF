@@ -6,7 +6,7 @@
 %
 \documentclass[
   a4paper,
-]{report}
+]{article}
 \usepackage{xcolor}
 \usepackage[top=25mm,bottom=25mm,left=20mm,right=20mm]{geometry}
 \usepackage{amsmath,amssymb}
@@ -71,38 +71,40 @@
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 % Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.75,0.01,0.01}{\textbf{\colorbox[rgb]{0.97,0.90,0.90}{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.79,0.38,0.79}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.00,0.34,0.68}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.69,0.50,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.39,0.29,0.61}{\textbf{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.57,0.30,0.62}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.54,0.53,0.53}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.58,1.00}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.67,0.33,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.12,0.11,0.11}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.00,0.34,0.68}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.69,0.50,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.38,0.47,0.50}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.75,0.01,0.01}{\underline{#1}}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.58,1.00}{\textbf{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.69,0.50,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.39,0.29,0.61}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{1.00,0.33,0.00}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.69,0.50,0.00}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.12,0.11,0.11}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.12,0.11,0.11}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.79,0.38,0.79}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.43,0.16}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.00,0.43,0.16}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.34,0.68}{\colorbox[rgb]{0.88,0.91,0.97}{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.24,0.68,0.91}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{1.00,0.33,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.75,0.01,0.01}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.34,0.68}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.75,0.01,0.01}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.75,0.01,0.01}{#1}}
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \usepackage{longtable,booktabs,array}
 \newcounter{none} % for unnumbered tables
@@ -145,39 +147,15 @@
  
 
 
-\usepackage{xcolor}
-\definecolor{branddark}{HTML}{0F172A}
-\definecolor{brandblue}{HTML}{1E3A8A}
-\definecolor{brandcyan}{HTML}{0284C7}
-\definecolor{brandgray}{HTML}{475569}
-\definecolor{bglight}{HTML}{F8FAFC}
-
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\textcolor{brandgray}{\scriptsize Introduction to Business Forecasting}}
-\lhead{\textcolor{brandgray}{\scriptsize Dr. Sankalp Purushottam Naik}}
+\rhead{\scriptsize Classical Forecasting Techniques}
+\lhead{\scriptsize Dr. Sankalp Purushottam Naik}
 \rfoot{\thepage}
-\lfoot{\textcolor{brandblue}{\scriptsize \bfseries Business Forecasting Notes by Sankalp Naik}}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
-
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-  {\normalfont\Huge\bfseries\color{brandblue}}{\chaptertitlename\ \thechapter}{10pt}{\Huge}
-\titleformat{\section}
-  {\normalfont\Large\bfseries\color{brandblue}}{\thesection}{1em}{}
-\titleformat{\subsection}
-  {\normalfont\large\bfseries\color{brandcyan}}{\thesubsection}{1em}{}
-
-\usepackage{framed}
-\renewenvironment{leftbar}[1][\linecolor]
-  {%
-    \def\linecolor{#1}%
-    \def\FrameCommand{{\color{\linecolor}\vrule width 3pt}\hspace{10pt}}%
-    \MakeFramed {\advance\hsize-\width \FrameRestore}%
-  }%
-  {\endMakeFramed}
+\lfoot{\scriptsize Business Forecasting Notes by Dr. Sankalp Naik}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
@@ -239,24 +217,17 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Business Forecasting Notes},
+  pdftitle={Classical Forecasting Techniques},
   pdfauthor={Dr.~Sankalp Purushottam Naik},
   colorlinks=true,
-  linkcolor={RoyalBlue},
+  linkcolor={blue},
   filecolor={Maroon},
   citecolor={Blue},
-  urlcolor={RoyalBlue},
+  urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Business Forecasting Notes}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Classical Forecasting Techniques}
+\title{Classical Forecasting Techniques}
 \author{Dr.~Sankalp Purushottam Naik}
 \date{2026-09-28}
 \begin{document}
@@ -264,58 +235,11 @@
 
 \renewcommand*\contentsname{Table of contents}
 {
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 }
 
-\begin{titlepage}
-\centering
-\vspace*{2cm}
-
-{\Huge \bfseries \color{brandblue} Business Forecasting Notes} \\[0.6cm]
-{\Large \bfseries \color{brandcyan} Comprehensive Chapter Guide \& Python Implementations} \\[1.8cm]
-
-\rule{\linewidth}{1.5pt} \\[2cm]
-
-{\Large \textbf{Dr. Sankalp Purushottam Naik}} \\[0.4cm]
-{\small \color{brandgray} Academic & Professional Lecture Series} \\[4cm]
-
-\vfill
-\begin{tcolorbox}[colback=bglight,colframe=brandcyan,arc=4mm,boxrule=1pt,width=0.85\linewidth]
-\centering
-\small \color{branddark} \textbf{Business Forecasting Notes by Sankalp Naik} \\
-\scriptsize A structured guide on time-series dynamics, predictive modeling, and empirical workflows.
-\end{tcolorbox}
-
-\vspace*{1cm}
-{\small \color{brandgray} \today}
-\end{titlepage}
-
-\newpage
 \thispagestyle{fancy}
-
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
-
-This course is designed to help students get started with Python
-programming. The target audience includes students with little or no
-programming experience, as well as those pursuing studies in analytics,
-data science, business, or finance.
-
-The course covers the fundamentals of Python programming, including
-syntax, variables, data types, operators, control structures, functions,
-and modules. By the end of the course, students will have a solid
-foundation in Python and will be able to write simple programs to solve
-practical problems.
-
-This course is not intended for learners seeking advanced software
-development or software engineering concepts.
-
-For effective learning, students are encouraged to practice the code
-examples alongside the material covered in the course.
-
-Happy learning!
-
-\end{tcolorbox}
 
 Classical forecasting techniques are a set of methods used to predict
 future values based on historical data. These techniques are widely used
@@ -326,7 +250,7 @@ average methods, exponential smoothing methods, Holt method, and
 Holt-Winters methods. We will also discuss their advantages and
 limitations, as well as how to implement them in practice.
 
-\chapter{Data Generating Process
+\section{Data Generating Process
 (DGP)}\label{data-generating-process-dgp}
 
 A data generating process (DGP) is a statistical model that describes
@@ -340,7 +264,7 @@ and stochastic processes. Understanding the DGP is crucial for selecting
 appropriate forecasting techniques and for interpreting the results of
 forecasts.
 
-\section{True DGP vs.~Models}\label{true-dgp-vs.-models}
+\subsection{True DGP vs.~Models}\label{true-dgp-vs.-models}
 
 True DGP refers to the actual process that generates the data, while
 models are simplified representations of the DGP that we use for
@@ -349,7 +273,7 @@ DGP, but they can still provide useful insights and predictions. It is
 important to evaluate the performance of models against the true DGP to
 ensure their accuracy and reliability.
 
-\section{Illustration 1: DGP and Models - Study Hours and Exam
+\subsection{Illustration 1: DGP and Models - Study Hours and Exam
 Scores}\label{illustration-1-dgp-and-models---study-hours-and-exam-scores}
 
 Suppose we observe the following data for 10 students. Each student
@@ -383,7 +307,7 @@ generated}.
 We simply observe the relationship between study hours and actual
 scores.
 
-\subsection{\texorpdfstring{\textbf{Data Display and Scatter
+\subsubsection{\texorpdfstring{\textbf{Data Display and Scatter
 Plot}}{Data Display and Scatter Plot}}\label{data-display-and-scatter-plot}
 
 \begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{💻 Coding Session}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
@@ -474,7 +398,7 @@ Plot}}{Data Display and Scatter Plot}}\label{data-display-and-scatter-plot}
 
 \end{tcolorbox}
 
-\subsection{What do we see?}\label{what-do-we-see}
+\subsubsection{What do we see?}\label{what-do-we-see}
 
 The scatter plot suggests a \textbf{positive relationship} between study
 hours and examination scores.
@@ -489,7 +413,7 @@ necessarily obtain exactly the same score.
 This suggests that something systematic is happening, but there is also
 some randomness in the data.
 
-\subsection{Signal and Noise}\label{signal-and-noise}
+\subsubsection{Signal and Noise}\label{signal-and-noise}
 
 We can think of the observed score as consisting of two components:
 
@@ -531,7 +455,7 @@ their scores may differ because of:
 Therefore, we do not expect every observation to lie exactly on the
 underlying relationship.
 
-\subsection{Capturing the Signal with Linear
+\subsubsection{Capturing the Signal with Linear
 Regression}\label{capturing-the-signal-with-linear-regression}
 
 One simple way to capture the systematic component of the relationship
@@ -570,7 +494,7 @@ In estimated form:
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{Estimate the Model}\label{estimate-the-model}
+\subsubsection{Estimate the Model}\label{estimate-the-model}
 
 \begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{💻 Coding Session}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
 
@@ -610,7 +534,7 @@ Dep. Variable:           Actual_Score   R-squared:                       0.994
 Model:                            OLS   Adj. R-squared:                  0.994
 Method:                 Least Squares   F-statistic:                     1423.
 Date:                Mon, 28 Sep 2026   Prob (F-statistic):           2.68e-10
-Time:                        01:55:12   Log-Likelihood:                -15.587
+Time:                        02:11:39   Log-Likelihood:                -15.587
 No. Observations:                  10   AIC:                             35.17
 Df Residuals:                       8   BIC:                             35.78
 Df Model:                           1                                         
@@ -637,7 +561,7 @@ Notes:
 
 \end{tcolorbox}
 
-\subsection{Regression Line and
+\subsubsection{Regression Line and
 Equation}\label{regression-line-and-equation}
 
 We can now plot the observed data together with the estimated regression
@@ -727,7 +651,7 @@ line.
 
 \end{tcolorbox}
 
-\subsection{Interpreting the Model}\label{interpreting-the-model}
+\subsubsection{Interpreting the Model}\label{interpreting-the-model}
 
 The estimated regression equation provides a simple representation of
 the systematic relationship between study hours and examination scores.
@@ -758,7 +682,7 @@ These residuals represent the portion of the observed data that is
 \textbf{not explained by the systematic relationship captured by the
 model}.
 
-\subsection{From Model to DGP}\label{from-model-to-dgp}
+\subsubsection{From Model to DGP}\label{from-model-to-dgp}
 
 We can now return to our original question:
 
@@ -791,7 +715,7 @@ In this example, we conceptualize the DGP as a systematic relationship
 between study hours and examination scores, together with a random
 component.
 
-\subsection{The Big Picture}\label{the-big-picture}
+\subsubsection{The Big Picture}\label{the-big-picture}
 
 The important distinction is:
 
@@ -836,7 +760,7 @@ In time-series forecasting, the signal may take different forms:
 The challenge is to distinguish these systematic patterns from random
 noise.
 
-\chapter{Naïve forecasting
+\section{Naïve forecasting
 Techniques}\label{nauxefve-forecasting-techniques}
 
 Naïve forecasting techniques are simple methods that use historical data
@@ -847,7 +771,7 @@ forecasting techniques, including the naïve method, seasonal naïve
 method, and drift method. We will also discuss their advantages and
 limitations, as well as how to implement them in practice.
 
-\section{Naïve Method}\label{nauxefve-method}
+\subsection{Naïve Method}\label{nauxefve-method}
 
 Naive method is a simple forecasting technique that assumes that the
 future value of a time series will be equal to the most recent observed
@@ -857,7 +781,7 @@ useful for time series data that exhibit a random walk behavior, where
 the best prediction for the next value is simply the last observed
 value.
 
-\subsection{Example: Naïve
+\subsubsection{Example: Naïve
 Forecasting}\label{example-nauxefve-forecasting}
 
 Suppose we observe the following monthly closing prices of a stock:
@@ -977,7 +901,7 @@ F_{\text{October}} = Y_{\text{September}}
 
 \textbf{The October forecast is ₹2,041.50.}
 
-\section{Seasonal Naïve Method}\label{seasonal-nauxefve-method}
+\subsection{Seasonal Naïve Method}\label{seasonal-nauxefve-method}
 
 The seasonal naïve method is an extension of the naïve method that takes
 into account the seasonality of the data. It assumes that the forecast
@@ -986,7 +910,7 @@ same period of the previous season. This method is particularly useful
 for time series data that exhibit strong seasonal patterns, such as
 monthly sales data or quarterly revenue data.
 
-\subsection{Example: Seasonal Naïve
+\subsubsection{Example: Seasonal Naïve
 Forecasting}\label{example-seasonal-nauxefve-forecasting}
 
 Suppose the quarterly sales of a company are as follows:
@@ -1029,35 +953,29 @@ forecast for each quarter of 2026?
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
-  
+
 \CommentTok{\# Create the dataset}
-\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
-    \StringTok{"Year"}\NormalTok{: [}\DecValTok{2024}\NormalTok{]}\OperatorTok{*}\DecValTok{4} \OperatorTok{+}\NormalTok{ [}\DecValTok{2025}\NormalTok{]}\OperatorTok{*}\DecValTok{4}\NormalTok{,}
-    \StringTok{"Quarter"}\NormalTok{: [}\StringTok{"Q1"}\NormalTok{, }\StringTok{"Q2"}\NormalTok{, }\StringTok{"Q3"}\NormalTok{, }\StringTok{"Q4"}\NormalTok{] }\OperatorTok{*} \DecValTok{2}\NormalTok{,}
-    \StringTok{"Sales"}\NormalTok{: [}\DecValTok{100}\NormalTok{, }\DecValTok{120}\NormalTok{, }\DecValTok{105}\NormalTok{, }\DecValTok{145}\NormalTok{, }\DecValTok{98}\NormalTok{, }\DecValTok{122}\NormalTok{, }\DecValTok{103}\NormalTok{, }\DecValTok{148}\NormalTok{]}
-\NormalTok{\})}
-  
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(}
+\NormalTok{    \{}
+        \StringTok{"Year"}\NormalTok{: [}\DecValTok{2024}\NormalTok{] }\OperatorTok{*} \DecValTok{4} \OperatorTok{+}\NormalTok{ [}\DecValTok{2025}\NormalTok{] }\OperatorTok{*} \DecValTok{4}\NormalTok{,}
+        \StringTok{"Quarter"}\NormalTok{: [}\StringTok{"Q1"}\NormalTok{, }\StringTok{"Q2"}\NormalTok{, }\StringTok{"Q3"}\NormalTok{, }\StringTok{"Q4"}\NormalTok{] }\OperatorTok{*} \DecValTok{2}\NormalTok{,}
+        \StringTok{"Sales"}\NormalTok{: [}\DecValTok{100}\NormalTok{, }\DecValTok{120}\NormalTok{, }\DecValTok{105}\NormalTok{, }\DecValTok{145}\NormalTok{, }\DecValTok{98}\NormalTok{, }\DecValTok{122}\NormalTok{, }\DecValTok{103}\NormalTok{, }\DecValTok{148}\NormalTok{],}
+\NormalTok{    \}}
+\NormalTok{)}
+
 \CommentTok{\# Create a sequential time{-}period variable}
 \NormalTok{df[}\StringTok{"Period"}\NormalTok{] }\OperatorTok{=} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, }\BuiltInTok{len}\NormalTok{(df) }\OperatorTok{+} \DecValTok{1}\NormalTok{)}
-  
+
 \CommentTok{\# Plot quarterly sales}
 \NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{))}
-  
-\NormalTok{plt.plot(}
-\NormalTok{    df[}\StringTok{"Period"}\NormalTok{],}
-\NormalTok{    df[}\StringTok{"Sales"}\NormalTok{],}
-\NormalTok{    marker}\OperatorTok{=}\StringTok{"o"}
-\NormalTok{)}
-  
+\NormalTok{plt.plot(df[}\StringTok{"Period"}\NormalTok{], df[}\StringTok{"Sales"}\NormalTok{], marker}\OperatorTok{=}\StringTok{"o"}\NormalTok{)}
 \NormalTok{plt.xticks(}
 \NormalTok{    df[}\StringTok{"Period"}\NormalTok{],}
-\NormalTok{    [}\SpecialStringTok{f"}\SpecialCharTok{\{}\NormalTok{year}\SpecialCharTok{\}}\SpecialStringTok{ }\SpecialCharTok{\{}\NormalTok{quarter}\SpecialCharTok{\}}\SpecialStringTok{"} \ControlFlowTok{for}\NormalTok{ year, quarter }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(df[}\StringTok{"Year"}\NormalTok{], df[}\StringTok{"Quarter"}\NormalTok{])]}
+\NormalTok{    [}\SpecialStringTok{f"}\SpecialCharTok{\{}\NormalTok{year}\SpecialCharTok{\}}\SpecialStringTok{ }\SpecialCharTok{\{}\NormalTok{quarter}\SpecialCharTok{\}}\SpecialStringTok{"} \ControlFlowTok{for}\NormalTok{ year, quarter }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(df[}\StringTok{"Year"}\NormalTok{], df[}\StringTok{"Quarter"}\NormalTok{])],}
 \NormalTok{)}
-  
 \NormalTok{plt.xlabel(}\StringTok{"Quarter"}\NormalTok{)}
 \NormalTok{plt.ylabel(}\StringTok{"Sales (₹ lakh)"}\NormalTok{)}
 \NormalTok{plt.title(}\StringTok{"Quarterly Sales: 2024–2025"}\NormalTok{)}
-  
 \NormalTok{plt.grid(}\VariableTok{True}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.3}\NormalTok{)}
 \NormalTok{plt.tight\_layout()}
 \NormalTok{plt.show()}
@@ -1081,13 +999,13 @@ forecast for each quarter of 2026?
 For quarterly data, the seasonal cycle is \textbf{4 quarters}:
 
 \[
-s=4
+s = 4
 \]
 
 Therefore, the seasonal naïve forecast is:
 
 \[
-\boxed{F_t=Y_{t-4}}
+\boxed{F_t = Y_{t-4}}
 \]
 
 So:
@@ -1111,200 +1029,202 @@ Q4 & \textbf{148} & 2025 Q4 \\
 observation}, the seasonal naïve method uses the observation from the
 \textbf{same season in the previous cycle}.
 
-\chapter{Smoothing Forecasting
-Techniques}\label{smoothing-forecasting-techniques}
+import matplotlib.pyplot as plt
 
-Smoothing forecasting techniques are a set of methods that use weighted
-averages of past observations to make predictions about future values.
-These techniques are particularly useful for time series data that
-exhibit trends or seasonality. In this section, we will explore some of
-the most commonly used smoothing forecasting techniques, including
-moving average methods, exponential smoothing methods, Holt method, and
-Holt-Winters methods. We will also discuss their advantages and
-limitations, as well as how to implement them in practice.
+\section{Create the dataset}\label{create-the-dataset}
 
-\section{Moving Average Methods}\label{moving-average-methods}
+df = pd.DataFrame(\{ ``Year'': {[}2024{]}\emph{4 + {[}2025{]}}4,
+``Quarter'': {[}``Q1'', ``Q2'', ``Q3'', ``Q4''{]} * 2, ``Sales'':
+{[}100, 120, 105, 145, 98, 122, 103, 148{]} \})
 
-Moving average methods are a simple smoothing technique that calculates
-the average of a fixed number of past observations to make predictions
-about future values. The moving average can be calculated using
-different window sizes, which determines how many past observations are
-included in the average. This method is particularly useful for time
-series data that exhibit short-term fluctuations or noise, as it helps
-to smooth out the data and reveal underlying trends.
+\section{Create a sequential time-period
+variable}\label{create-a-sequential-time-period-variable}
 
-\subsection{Short vs Long Moving Average
-Window}\label{short-vs-long-moving-average-window}
+df{[}``Period''{]} = range(1, len(df) + 1)
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3553}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2763}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3684}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{🔎 Short Window}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{🌐 Long Window}
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-📊 \textbf{Observations} & Fewer observations & More observations \\
-⚡ \textbf{Responsiveness} & \textbf{High} & \textbf{Low} \\
-🔊 \textbf{Sensitivity to noise} & \textbf{High} & \textbf{Low} \\
-📉 \textbf{Smoothing} & Less smoothing & \textbf{More smoothing} \\
-⏱️ \textbf{Lag} & \textbf{Lower} & \textbf{Higher} \\
-🎯 \textbf{Best when} & Recent changes matter & Underlying pattern is
-stable \\
-\end{longtable}
-}
+\section{Plot quarterly sales}\label{plot-quarterly-sales}
 
-\textbf{\emph{⚖️ The Trade-off}}
+plt.figure(figsize=(10, 5))
 
-\[
+plt.plot( df{[}``Period''{]}, df{[}``Sales''{]}, marker=``o'' )
+
+plt.xticks( df{[}``Period''{]}, {[}f''\{year\} \{quarter\}'' for year,
+quarter in zip(df{[}``Year''{]}, df{[}``Quarter''{]}){]} )
+
+plt.xlabel(``Quarter'') plt.ylabel(``Sales (₹ lakh)'')
+plt.title(``Quarterly Sales: 2024--2025'')
+
+plt.grid(True, alpha=0.3) plt.tight\_layout() plt.show()
+
+\begin{verbatim}
+::: 
+      
+For quarterly data, the seasonal cycle is **4 quarters**:
+  
+$$
+s=4
+$$
+  
+Therefore, the seasonal naïve forecast is:
+  
+$$
+\boxed{F_t=Y_{t-4}}
+$$
+   
+So:
+  
+| Quarter | 2026 Forecast (₹ lakh) | Based On |
+| :-----: | ---------------------: | :------- |
+|    Q1   |                 **98** | 2025 Q1  |
+|    Q2   |                **122** | 2025 Q2  |
+|    Q3   |                **103** | 2025 Q3  |
+|    Q4   |                **148** | 2025 Q4  |
+  
+**Key idea:** Instead of using the **immediately preceding observation**, the seasonal naïve method uses the observation from the **same season in the previous cycle**.
+  
+# Smoothing Forecasting Techniques  
+  
+Smoothing forecasting techniques are a set of methods that use weighted averages of past observations to make predictions about future values. These techniques are particularly useful for time series data that exhibit trends or seasonality. In this section, we will explore some of the most commonly used smoothing forecasting techniques, including moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.
+
+## Moving Average Methods
+  
+Moving average methods are a simple smoothing technique that calculates the average of a fixed number of past observations to make predictions about future values. The moving average can be calculated using different window sizes, which determines how many past observations are included in the average. This method is particularly useful for time series data that exhibit short-term fluctuations or noise, as it helps to smooth out the data and reveal underlying trends.
+  
+### Short vs Long Moving Average Window
+  
+|                             | **🔎 Short Window**   | **🌐 Long Window**           |
+| :-------------------------- | :-------------------- | :--------------------------- |
+| 📊 **Observations**         | Fewer observations    | More observations            |
+| ⚡ **Responsiveness**        | **High**              | **Low**                      |
+| 🔊 **Sensitivity to noise** | **High**              | **Low**                      |
+| 📉 **Smoothing**            | Less smoothing        | **More smoothing**           |
+| ⏱️ **Lag**                  | **Lower**             | **Higher**                   |
+| 🎯 **Best when**            | Recent changes matter | Underlying pattern is stable |
+  
+***⚖️ The Trade-off***
+
+$$
 \boxed{\text{Short Window} \rightarrow \text{More Responsive, Less Smooth}}
-\]
+$$
 
-\[
+$$
 \boxed{\text{Long Window} \rightarrow \text{More Smooth, Less Responsive}}
-\]
+$$
 
-\begin{quote}
-💡 \textbf{Key Insight:} A longer window removes more \textbf{noise},
-but may also make the forecast slow to react to genuine changes in the
-\textbf{signal}.
-\end{quote}
+> 💡 **Key Insight:** A longer window removes more **noise**, but may also make the forecast slow to react to genuine changes in the **signal**.
 
-\subsection{Example: Simple Moving Average (SMA)
-Analysis}\label{example-simple-moving-average-sma-analysis}
+### Example: Simple Moving Average (SMA) Analysis
 
-In time-series analysis, moving averages help smooth short-term
-fluctuations and highlight longer-term movements in a series. A shorter
-moving-average window responds more quickly to recent changes, while a
-longer window produces a smoother representation of the underlying
-trend.
+In time-series analysis, moving averages help smooth short-term fluctuations and highlight longer-term movements in a series. A shorter moving-average window responds more quickly to recent changes, while a longer window produces a smoother representation of the underlying trend.
 
-\textbf{Question}
+**Question**
 
-Using the quarterly automobile sales dataset
-(\texttt{automobile\_sales.csv}), inspect the data structure, display
-the first few observations, and construct two visualizations:
+Using the quarterly automobile sales dataset (`automobile_sales.csv`), inspect the data structure, display the first few observations, and construct two visualizations:
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  A raw line plot of quarterly automobile sales.
-\item
-  A plot showing the original sales data alongside 3-period and
-  10-period simple moving averages.
-\end{enumerate}
+1. A raw line plot of quarterly automobile sales.
+2. A plot showing the original sales data alongside 3-period and 10-period simple moving averages.
 
-\textbf{Answer}
+**Answer**
 
-\textbf{Visualizing the Data}
+**Visualizing the Data**
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{💻 Coding Session}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+::: {.callout-tip title="💻 Coding Session"}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
-\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+::: {.cell execution_count=6}
+``` {.python .cell-code}
+import pandas as pd
+import matplotlib.pyplot as plt
 
-\CommentTok{\# Load the dataset}
-\NormalTok{file\_path }\OperatorTok{=} \StringTok{"/home/sankalpnaique/PyWorks/BGF/data/automobile\_sales.csv"}
-\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(file\_path)}
+# Load the dataset
+file_path = "/home/sankalpnaique/PyWorks/BGF/data/automobile_sales.csv"
+df = pd.read_csv(file_path)
 
-\CommentTok{\# Inspect the dataset}
-\BuiltInTok{print}\NormalTok{(}\StringTok{"First 5 rows of the dataset:"}\NormalTok{)}
-\NormalTok{display(df.head())}
+# Inspect the dataset
+print("First 5 rows of the dataset:")
+display(df.head())
 
-\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Data types:"}\NormalTok{)}
-\NormalTok{display(df.dtypes)}
+print("\nData types:")
+display(df.dtypes)
 
-\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Number of observations and variables:"}\NormalTok{)}
-\BuiltInTok{print}\NormalTok{(df.shape)}
+print("\nNumber of observations and variables:")
+print(df.shape)
 
-\CommentTok{\# Calculate 3{-}period and 10{-}period moving averages}
-\NormalTok{df[}\StringTok{"MA\_3"}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{"sales"}\NormalTok{].rolling(window}\OperatorTok{=}\DecValTok{3}\NormalTok{).mean()}
-\NormalTok{df[}\StringTok{"MA\_10"}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{"sales"}\NormalTok{].rolling(window}\OperatorTok{=}\DecValTok{10}\NormalTok{).mean()}
+# Calculate 3-period and 10-period moving averages
+df["MA_3"] = df["sales"].rolling(window=3).mean()
+df["MA_10"] = df["sales"].rolling(window=10).mean()
 
-\CommentTok{\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\CommentTok{\# Figure 1: Raw quarterly sales}
-\CommentTok{\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+# --------------------------------------------------
+# Figure 1: Raw quarterly sales
+# --------------------------------------------------
 
-\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+plt.figure(figsize=(12, 5))
 
-\NormalTok{plt.plot(}
-\NormalTok{    df[}\StringTok{"qtr"}\NormalTok{],}
-\NormalTok{    df[}\StringTok{"sales"}\NormalTok{],}
-\NormalTok{    linewidth}\OperatorTok{=}\FloatTok{1.5}\NormalTok{,}
-\NormalTok{    label}\OperatorTok{=}\StringTok{"Actual Sales"}
-\NormalTok{)}
+plt.plot(
+    df["qtr"],
+    df["sales"],
+    linewidth=1.5,
+    label="Actual Sales"
+)
 
-\NormalTok{plt.title(}
-    \StringTok{"Quarterly Automobile Sales"}\NormalTok{,}
-\NormalTok{    fontsize}\OperatorTok{=}\DecValTok{13}\NormalTok{,}
-\NormalTok{    fontweight}\OperatorTok{=}\StringTok{"bold"}
-\NormalTok{)}
+plt.title(
+    "Quarterly Automobile Sales",
+    fontsize=13,
+    fontweight="bold"
+)
 
-\NormalTok{plt.xlabel(}\StringTok{"Quarter"}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{"Automobile Sales"}\NormalTok{)}
+plt.xlabel("Quarter")
+plt.ylabel("Automobile Sales")
 
-\NormalTok{plt.grid(}\VariableTok{True}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.3}\NormalTok{)}
-\NormalTok{plt.legend()}
+plt.grid(True, alpha=0.3)
+plt.legend()
 
-\NormalTok{plt.tight\_layout()}
-\NormalTok{plt.show()}
+plt.tight_layout()
+plt.show()
 
 
-\CommentTok{\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\CommentTok{\# Figure 2: Sales with moving averages}
-\CommentTok{\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+# --------------------------------------------------
+# Figure 2: Sales with moving averages
+# --------------------------------------------------
 
-\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+plt.figure(figsize=(12, 5))
 
-\NormalTok{plt.plot(}
-\NormalTok{    df[}\StringTok{"qtr"}\NormalTok{],}
-\NormalTok{    df[}\StringTok{"sales"}\NormalTok{],}
-\NormalTok{    linewidth}\OperatorTok{=}\FloatTok{1.2}\NormalTok{,}
-\NormalTok{    alpha}\OperatorTok{=}\FloatTok{0.6}\NormalTok{,}
-\NormalTok{    label}\OperatorTok{=}\StringTok{"Actual Sales"}
-\NormalTok{)}
+plt.plot(
+    df["qtr"],
+    df["sales"],
+    linewidth=1.2,
+    alpha=0.6,
+    label="Actual Sales"
+)
 
-\NormalTok{plt.plot(}
-\NormalTok{    df[}\StringTok{"qtr"}\NormalTok{],}
-\NormalTok{    df[}\StringTok{"MA\_3"}\NormalTok{],}
-\NormalTok{    linewidth}\OperatorTok{=}\DecValTok{2}\NormalTok{,}
-\NormalTok{    label}\OperatorTok{=}\StringTok{"3{-}Period MA"}
-\NormalTok{)}
+plt.plot(
+    df["qtr"],
+    df["MA_3"],
+    linewidth=2,
+    label="3-Period MA"
+)
 
-\NormalTok{plt.plot(}
-\NormalTok{    df[}\StringTok{"qtr"}\NormalTok{],}
-\NormalTok{    df[}\StringTok{"MA\_10"}\NormalTok{],}
-\NormalTok{    linewidth}\OperatorTok{=}\DecValTok{2}\NormalTok{,}
-\NormalTok{    label}\OperatorTok{=}\StringTok{"10{-}Period MA"}
-\NormalTok{)}
+plt.plot(
+    df["qtr"],
+    df["MA_10"],
+    linewidth=2,
+    label="10-Period MA"
+)
 
-\NormalTok{plt.title(}
-    \StringTok{"Quarterly Automobile Sales: 3{-}Period vs. 10{-}Period Moving Averages"}\NormalTok{,}
-\NormalTok{    fontsize}\OperatorTok{=}\DecValTok{13}\NormalTok{,}
-\NormalTok{    fontweight}\OperatorTok{=}\StringTok{"bold"}
-\NormalTok{)}
+plt.title(
+    "Quarterly Automobile Sales: 3-Period vs. 10-Period Moving Averages",
+    fontsize=13,
+    fontweight="bold"
+)
 
-\NormalTok{plt.xlabel(}\StringTok{"Quarter"}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{"Automobile Sales"}\NormalTok{)}
+plt.xlabel("Quarter")
+plt.ylabel("Automobile Sales")
 
-\NormalTok{plt.grid(}\VariableTok{True}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.3}\NormalTok{)}
-\NormalTok{plt.legend()}
+plt.grid(True, alpha=0.3)
+plt.legend()
 
-\NormalTok{plt.tight\_layout()}
-\NormalTok{plt.show()}
-\end{Highlighting}
-\end{Shaded}
+plt.tight_layout()
+plt.show()
+\end{verbatim}
 
 \begin{verbatim}
 First 5 rows of the dataset:
@@ -1352,7 +1272,9 @@ Number of observations and variables:
 
 \pandocbounded{\includegraphics[keepaspectratio]{2_classical_forecast_tech_pdf_files/figure-pdf/cell-7-output-7.pdf}}
 
-\end{tcolorbox}
+:::
+
+:::
 
 The \(k\)-period simple moving average at period \(t\) is calculated as:
 
@@ -1374,7 +1296,7 @@ greater smoothing and is less sensitive to short-term fluctuations,
 making it more useful for identifying broader movements in the series.
 \end{quote}
 
-\section{Weighted Moving Average
+\subsection{Weighted Moving Average
 (WMA)}\label{weighted-moving-average-wma}
 
 Weighted Moving Average (WMA) is a variation of the simple moving
@@ -1415,7 +1337,7 @@ faster.
 linear vs.~exponential), you control how quickly the model ``forgets''
 distant history.
 
-\subsection{Mathematical Formulation of
+\subsubsection{Mathematical Formulation of
 WMA}\label{mathematical-formulation-of-wma}
 
 For a 3-period moving average:
@@ -1445,7 +1367,7 @@ So the intuition is simply:
 
 \textbf{Weighted Moving Average:} Recent observations can matter more.
 
-\subsection{Example: Simple vs Weighted Moving
+\subsubsection{Example: Simple vs Weighted Moving
 Average}\label{example-simple-vs-weighted-moving-average}
 
 \begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{💻 Coding Session}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
@@ -1501,7 +1423,7 @@ Average}\label{example-simple-vs-weighted-moving-average}
 
 \end{tcolorbox}
 
-\chapter{Trend \& Seasonality Forecasting
+\section{Trend \& Seasonality Forecasting
 Techniques}\label{trend-seasonality-forecasting-techniques}
 
 Trend and seasonality forecasting techniques are methods that account
@@ -1514,7 +1436,7 @@ Holt's linear trend method and Holt-Winters seasonal method. We will
 also discuss their advantages and limitations, as well as how to
 implement them in practice.
 
-\section{Holt's Exponential Smoothing Model (Double Exponential
+\subsection{Holt's Exponential Smoothing Model (Double Exponential
 Smoothing)}\label{holts-exponential-smoothing-model-double-exponential-smoothing}
 
 Holt's model extends \textbf{Simple Exponential Smoothing} by explicitly
@@ -1541,7 +1463,7 @@ The model therefore estimates two components:
 \textbf{Holt:} What is the current level + where is it heading?
 \end{quote}
 
-\subsection{Mathematical Formulation of Holt's
+\subsubsection{Mathematical Formulation of Holt's
 Model}\label{mathematical-formulation-of-holts-model}
 
 The level and trend are updated recursively:
@@ -1572,7 +1494,7 @@ where:
   \(h\) = number of periods ahead
 \end{itemize}
 
-\subsection{Example: Holt's Model}\label{example-holts-model}
+\subsubsection{Example: Holt's Model}\label{example-holts-model}
 
 \begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{💻 Coding Session}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
 
@@ -1640,7 +1562,7 @@ where:
 
 \end{tcolorbox}
 
-\section{Holt-Winters Model}\label{holt-winters-model}
+\subsection{Holt-Winters Model}\label{holt-winters-model}
 
 Holt-Winters extends Holt's model by adding a \textbf{seasonal
 component}.
@@ -1669,7 +1591,7 @@ s=4
 \textbf{Holt-Winters:} Level + Trend + Seasonality
 \end{quote}
 
-\subsection{Example: Holt-Winters
+\subsubsection{Example: Holt-Winters
 Model}\label{example-holt-winters-model}
 
 \begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{💻 Coding Session}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
@@ -1728,7 +1650,7 @@ Model}\label{example-holt-winters-model}
 
 \end{tcolorbox}
 
-\subsection{The Progression}\label{the-progression}
+\subsubsection{The Progression}\label{the-progression}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}

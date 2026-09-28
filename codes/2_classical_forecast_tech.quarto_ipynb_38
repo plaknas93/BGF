@@ -64,7 +64,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "426b071b"
+      "id": "8ca086ca"
     },
     {
       "cell_type": "code",
@@ -199,7 +199,7 @@
         "   \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "7bf45d67"
+      "id": "55f78099"
     },
     {
       "cell_type": "code",
@@ -245,7 +245,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}\n"
       ],
-      "id": "f807a7c5"
+      "id": "99412b9b"
     },
     {
       "cell_type": "code",
@@ -449,7 +449,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "38f1c68c"
+      "id": "51028469"
     },
     {
       "cell_type": "code",
@@ -567,7 +567,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "7aca09f0"
+      "id": "86f1af16"
     },
     {
       "cell_type": "code",
@@ -694,7 +694,7 @@
         "\n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "48d7344e"
+      "id": "6478b730"
     },
     {
       "cell_type": "code",
@@ -796,7 +796,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "00fae7ca",
+      "id": "92a4a7ee",
       "execution_count": null,
       "outputs": []
     },
@@ -875,7 +875,7 @@
         "\n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "a6acc226"
+      "id": "79804682"
     },
     {
       "cell_type": "code",
@@ -978,7 +978,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}\n"
       ],
-      "id": "2530273b"
+      "id": "69f5a887"
     },
     {
       "cell_type": "code",
@@ -1069,7 +1069,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻 Coding Session\"}"
       ],
-      "id": "9329d955"
+      "id": "7bf00da0"
     },
     {
       "cell_type": "code",
@@ -1116,7 +1116,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "a7d5246a",
+      "id": "4d24105d",
       "execution_count": null,
       "outputs": []
     },
@@ -1136,7 +1136,7 @@
         "\n",
         "> **The key idea:** Each model adds another component of the underlying time-series pattern."
       ],
-      "id": "53ca553d"
+      "id": "39aab02c"
     }
   ],
   "metadata": {
