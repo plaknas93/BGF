@@ -585,7 +585,7 @@ So:
   
 # Smoothing Forecasting Techniques  
   
-Smoothing forecasting techniques are a set of methods that use weighted averages of past observations to make predictions about future values. These techniques are particularly useful for time series data that exhibit trends or seasonality. In this section, we will explore some of the most commonly used smoothing forecasting techniques, including moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.
+Smoothing forecasting techniques are a set of methods that use weighted averages of past observations to make predictions about future values. These techniques are particularly useful for time series data that exhibit an inherent level. In this section, we will explore some of the most commonly used smoothing forecasting techniques, including moving average methods, exponential smoothing methods, Holt method, and Holt-Winters methods. We will also discuss their advantages and limitations, as well as how to implement them in practice.
 
 ## Moving Average Methods
   

@@ -22,9 +22,7 @@ execute:
 
 ::: {.callout-note}
 
-This course is designed to help students get started with Python programming. The target audience includes students with little or no programming experience, as well as those pursuing studies in analytics, data science, business, or finance.
-  
-The course covers the fundamentals of Python programming, including syntax, variables, data types, operators, control structures, functions, and modules. By the end of the course, students will have a solid foundation in Python and will be able to write simple programs to solve practical problems.
+This course is designed for learners with a basic understanding of statistics and Python programming. It is intended to provide a practical introduction to business forecasting, focusing on the application of statistical and machine learning techniques to real-world business problems.
   
 This course is not intended for learners seeking advanced software development or software engineering concepts.
   
