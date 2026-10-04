@@ -10,7 +10,7 @@ This is an **intuition-first management course** on business forecasting and tim
 
 The course uses Python as a practical tool for exploring data, visualising patterns, applying forecasting techniques, and interpreting results.
 
-## 📚 Course Overview & Target Audience
+# 📚 Course Overview & Target Audience
 
 This course is designed for learners with a **basic understanding of statistics and Python programming**.
 
@@ -25,15 +25,15 @@ This course is **not intended for learners seeking advanced programming or softw
 
 For effective learning, students are encouraged to **practice the code examples alongside the material and experiment with the data**.
 
-## 🧭 Course Content
+# 🧭 Course Content
 
-### 1. Introduction to Forecasting
+## Introduction to Forecasting
 
 Understand forecasting, forecastability, time series data, regression versus time-series forecasting, and time-series decomposition.
 
 [**Start the course →**](1_intro_forecast.qmd)
 
-### 2. Classical Forecasting Techniques
+## Classical Forecasting Techniques
 
 Learn practical forecasting methods including moving averages, weighted moving averages, exponential smoothing, Holt's method, and Holt-Winters methods.
 
@@ -41,7 +41,7 @@ Learn practical forecasting methods including moving averages, weighted moving a
 
 ---
 
-## 🤖 AI Disclosure & Content Integrity
+# 🤖 AI Disclosure & Content Integrity
 
 The content and structure of this course have been developed based on the **author's own understanding, intuition, and teaching experience**. *Forecasting: Principles and Practice* by **Rob J. Hyndman and George Athanasopoulos** served as the principal reference for developing the course material.
 
