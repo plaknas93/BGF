@@ -285,7 +285,7 @@ import seaborn as sns
 import statsmodels.api as sm
 
 # Load data
-df = pd.read_csv("/home/sankalpnaique/PyWorks/BGF/data/cement_sales.csv")
+df = pd.read_csv("data/cement_sales.csv")
 
 # Display the first few observations
 df.head()
