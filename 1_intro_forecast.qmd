@@ -22,6 +22,8 @@ execute:
 
 ::: {.callout-note}
 
+***Course Overview and Target Audience***
+ 
 This course is designed for learners with a basic understanding of statistics and Python programming. It provides a practical introduction to business forecasting and time series analysis, with a focus on applying statistical techniques to real-world business problems.
 
 This course is not intended for learners seeking advanced programming or software development concepts.
@@ -29,6 +31,15 @@ This course is not intended for learners seeking advanced programming or softwar
 For effective learning, students are encouraged to practice the code examples alongside the material and experiment with the data.
 
 Happy learning! 🚀
+  
+***🤖 AI Disclosure and Content Integrity***
+
+The content and structure of this course have been developed based on the **author's own understanding, intuition, and teaching experience**. *Forecasting: Principles and Practice* by **Rob J. Hyndman and George Athanasopoulos** served as the principal reference for developing the course material.
+
+**AI tools were used primarily for editing, refinement, and presentation.** The conceptual framing, examples, and instructional approach remain the responsibility of the author.
+
+While every effort has been made to ensure accuracy and clarity, learners are encouraged to **think critically, verify important concepts, and consult the recommended references and additional resources where appropriate**.
+
 :::
 
 # Learning Objectives
