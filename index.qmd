@@ -1,0 +1,54 @@
+---
+title: "Business Guesstimation & Forecasting"
+---
+
+# Business Guesstimation & Forecasting
+
+Welcome to **Business Guesstimation & Forecasting (BGF)**.
+
+This is an **intuition-first management course** on business forecasting and time series analysis. The emphasis is on understanding **why forecasting methods work, what they tell us, and how they can be applied to real-world business problems**.
+
+The course uses Python as a practical tool for exploring data, visualising patterns, applying forecasting techniques, and interpreting results.
+
+## 📚 Course Overview & Target Audience
+
+This course is designed for learners with a **basic understanding of statistics and Python programming**.
+
+It provides a practical introduction to:
+
+- 📈 **Business Forecasting** — understanding and estimating future outcomes using available information.
+- ⏱️ **Time Series Analysis** — understanding how variables behave and evolve over time.
+- 🔍 **Forecasting Methods** — applying statistical techniques to real-world business problems.
+- 🐍 **Python for Forecasting** — using Python to explore, visualise, analyse, and forecast business data.
+
+This course is **not intended for learners seeking advanced programming or software development concepts**.
+
+For effective learning, students are encouraged to **practice the code examples alongside the material and experiment with the data**.
+
+## 🧭 Course Content
+
+### 1. Introduction to Forecasting
+
+Understand forecasting, forecastability, time series data, regression versus time-series forecasting, and time-series decomposition.
+
+[**Start the course →**](1_intro_forecast.qmd)
+
+### 2. Classical Forecasting Techniques
+
+Learn practical forecasting methods including moving averages, weighted moving averages, exponential smoothing, Holt's method, and Holt-Winters methods.
+
+[**Continue →**](2_classical_forecast_tech.qmd)
+
+---
+
+## 🤖 AI Disclosure & Content Integrity
+
+The content and structure of this course have been developed based on the **author's own understanding, intuition, and teaching experience**. *Forecasting: Principles and Practice* by **Rob J. Hyndman and George Athanasopoulos** served as the principal reference for developing the course material.
+
+**AI tools were used primarily for editing, refinement, and presentation.** The conceptual framing, examples, and instructional approach remain the responsibility of the author.
+
+While every effort has been made to ensure accuracy and clarity, learners are encouraged to **think critically, verify important concepts, and consult the recommended references and additional resources where appropriate**.
+
+---
+
+**Happy learning! 🚀**

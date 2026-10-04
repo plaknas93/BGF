@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Business Guesstimation & Forecasting"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Course"
+        menu:
+          - text: "1. Introduction to Forecasting"
+            href: 1_intro_forecast.qmd
+          - text: "2. Classical Forecasting Techniques"
+            href: 2_classical_forecast_tech.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-copy: true
+    css: styles.css
