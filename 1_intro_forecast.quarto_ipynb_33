@@ -261,7 +261,7 @@
         "\n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "c37c36f2"
+      "id": "ba90373a"
     },
     {
       "cell_type": "code",
@@ -299,7 +299,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "36355bfd"
+      "id": "ba309343"
     },
     {
       "cell_type": "code",
@@ -341,7 +341,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0c1c72b4"
+      "id": "e2e54410"
     },
     {
       "cell_type": "code",
@@ -400,7 +400,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "bf13a4b4"
+      "id": "234e5da8"
     },
     {
       "cell_type": "code",
@@ -440,7 +440,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0744edd6"
+      "id": "bc522b7f"
     },
     {
       "cell_type": "code",
@@ -489,7 +489,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "a6d0a5d2"
+      "id": "3509a417"
     },
     {
       "cell_type": "code",
@@ -629,7 +629,7 @@
         "\n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "3f2892d4"
+      "id": "58be15c6"
     },
     {
       "cell_type": "code",
@@ -715,7 +715,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0fc12aa8"
+      "id": "ef381710"
     },
     {
       "cell_type": "code",
@@ -767,7 +767,7 @@
       "source": [
         ":::"
       ],
-      "id": "889aea05"
+      "id": "7521181a"
     }
   ],
   "metadata": {

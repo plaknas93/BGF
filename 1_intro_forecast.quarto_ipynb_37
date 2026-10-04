@@ -28,15 +28,35 @@
         "\n",
         "::: {.callout-note}\n",
         "\n",
-        "This course is designed for learners with a basic understanding of statistics and Python programming. It is intended to provide a practical introduction to business forecasting, focusing on the application of statistical and machine learning techniques to real-world business problems.\n",
-        "  \n",
-        "This course is not intended for learners seeking advanced software development or software engineering concepts.\n",
-        "  \n",
-        "For effective learning, students are encouraged to practice the code examples alongside the material covered in the course.\n",
+        "This course is designed for learners with a basic understanding of statistics and Python programming. It provides a practical introduction to business forecasting and time series analysis, with a focus on applying statistical techniques to real-world business problems.\n",
         "\n",
-        "Happy learning!\n",
+        "This course is not intended for learners seeking advanced programming or software development concepts.\n",
+        "\n",
+        "For effective learning, students are encouraged to practice the code examples alongside the material and experiment with the data.\n",
+        "\n",
+        "Happy learning! 🚀\n",
+        ":::\n",
+        "\n",
+        "# Learning Objectives\n",
+        "  \n",
+        ":::{.callout-important title=\"After completing this chapter, you will be able to:\"}\n",
+        "  \n",
+        "1. 🎯 Explain what forecasting is and distinguish a forecast, goal, and plan.\n",
+        "  \n",
+        "2. 🔍 Assess forecastability by considering relevant drivers, data availability, stability of historical patterns, and forecast interference.\n",
+        "  \n",
+        "3. ⏳ Identify and describe a time series and distinguish it from cross-sectional data.\n",
+        "  \n",
+        "4. 📊 Recognize patterns in time series data, including trend, seasonality, cycles, and irregular variation.\n",
+        "  \n",
+        "5. 🔄 Distinguish regression analysis from time-series forecasting and explain how the historical behaviour of a variable can provide information about its future.\n",
+        "  \n",
+        "6. 🧩 Explain the idea of time-series decomposition and interpret its major components.\n",
+        "  \n",
+        "7. 💻 Use Python to explore, visualize, and analyse business data as a foundation for forecasting.\n",
         "\n",
         ":::\n",
+        "  \n",
         "\n",
         "# 🔮 The Pseudo-Science of Prediction <!-- Heading 1 -->\n",
         "  \n",
@@ -74,21 +94,7 @@
         "  \n",
         "**This is where forecasting begins.**\n",
         "\n",
-        "# Learning Objectives\n",
-        "  \n",
-        ":::{.callout-important title=\"After completing this chapter, you will be able to:\"}\n",
-        "  \n",
-        "- Explain the concept and purpose of forecasting and distinguish forecasts from goals and plans.\n",
-        "    \n",
-        "- Identify the key factors that determine forecastability, including relevant drivers, data availability, stability of the past, and forecast interference.\n",
-        "  \n",
-        "- Describe what constitutes a time series and recognize trend, seasonality, cycles, and irregular variation in time-dependent data.\n",
-        "  \n",
-        "- Apply a basic Python workflow for data analysis, including data exploration, visualization, correlation analysis, and multiple linear regression.\n",
-        "  \n",
-        "- Distinguish regression-based analysis from time-series forecasting and explain how the historical behaviour of a variable can provide information about its future.  \n",
-        ":::\n",
-        "          \n",
+        "            \n",
         "# What is Forecasting?\n",
         "  \n",
         "> **Forecasting is the process of using information available today to estimate\n",
@@ -261,7 +267,7 @@
         "\n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "c37c36f2"
+      "id": "39cde473"
     },
     {
       "cell_type": "code",
@@ -299,7 +305,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "36355bfd"
+      "id": "8fca829e"
     },
     {
       "cell_type": "code",
@@ -341,7 +347,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0c1c72b4"
+      "id": "88993381"
     },
     {
       "cell_type": "code",
@@ -400,7 +406,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "bf13a4b4"
+      "id": "0d034f19"
     },
     {
       "cell_type": "code",
@@ -440,7 +446,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0744edd6"
+      "id": "e58d5ce6"
     },
     {
       "cell_type": "code",
@@ -489,7 +495,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "a6d0a5d2"
+      "id": "de4ba32c"
     },
     {
       "cell_type": "code",
@@ -552,7 +558,7 @@
         "\n",
         "**Adjusted R-Squared:** \n",
         "  \n",
-        "A fatal flaw with R-squared is that it always increases as more variables are added to the model, even if those variables do not contribute meaningfully.   \n",
+        "A limitation with R-squared is that it always increases as more variables are added to the model, even if those variables do not contribute meaningfully.   \n",
         "  \n",
         "*Adjusted R-squared* accounts for the number of explanatory variables in the model and is a more reliable measure of goodness of fit, especially when comparing models with different numbers of independent variables.\n",
         "  \n",
@@ -629,7 +635,7 @@
         "\n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "3f2892d4"
+      "id": "c307d383"
     },
     {
       "cell_type": "code",
@@ -707,7 +713,7 @@
         "\n",
         "**Note:**   \n",
         "1. A time series may also contain a **cycle** component. However, for simplicity, we will focus on the three core components: **trend, seasonality, and irregular variation** (also called **randomness, noise, or random noise**).  \n",
-        "2. A time series may be **additive** or **multiplicative**, depending on how the components interact with one another.The above equation represents an **additive model**. The **multiplicative model** is beyond the scope of this course.\n",
+        "2. A time series may be **additive** or **multiplicative**, depending on how the components interact with one another. The above equation represents an **additive model**. The **multiplicative model** is beyond the scope of this course.\n",
         "\n",
         "## TS Decomposition in Python\n",
         "\n",
@@ -715,7 +721,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0fc12aa8"
+      "id": "e1e6391e"
     },
     {
       "cell_type": "code",
@@ -767,7 +773,7 @@
       "source": [
         ":::"
       ],
-      "id": "889aea05"
+      "id": "bb2d195e"
     }
   ],
   "metadata": {

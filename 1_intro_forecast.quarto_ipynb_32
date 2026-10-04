@@ -261,7 +261,7 @@
         "\n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "c37c36f2"
+      "id": "da6edddc"
     },
     {
       "cell_type": "code",
@@ -299,7 +299,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "36355bfd"
+      "id": "09f895f6"
     },
     {
       "cell_type": "code",
@@ -341,7 +341,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0c1c72b4"
+      "id": "7b13157f"
     },
     {
       "cell_type": "code",
@@ -400,7 +400,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "bf13a4b4"
+      "id": "8769b854"
     },
     {
       "cell_type": "code",
@@ -440,7 +440,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0744edd6"
+      "id": "07084338"
     },
     {
       "cell_type": "code",
@@ -489,7 +489,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "a6d0a5d2"
+      "id": "3fc47530"
     },
     {
       "cell_type": "code",
@@ -629,7 +629,7 @@
         "\n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "3f2892d4"
+      "id": "e7b381f8"
     },
     {
       "cell_type": "code",
@@ -715,7 +715,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "0fc12aa8"
+      "id": "387bd79a"
     },
     {
       "cell_type": "code",
@@ -728,31 +728,18 @@
         "\n",
         "from statsmodels.tsa.seasonal import seasonal_decompose\n",
         "import matplotlib.pyplot as plt\n",
-        "import pandas as pd\n",
         "\n",
-        "# Convert Quarter to datetime\n",
-        "df[\"Quarter\"] = pd.PeriodIndex(df[\"Quarter\"], freq=\"Q\").to_timestamp()\n",
+        "# Convert Quarter to PeriodIndex\n",
+        "df[\"Quarter\"] = pd.PeriodIndex(df[\"Quarter\"], freq=\"Q\")\n",
         "\n",
-        "# Create time series\n",
+        "# Create a time-indexed series\n",
         "ts = df.set_index(\"Quarter\")[\"Cement_Sales_000_Tons\"]\n",
         "\n",
-        "# Decompose\n",
+        "# Time Series Decomposition\n",
         "decomposition = seasonal_decompose(ts, model=\"additive\", period=4)\n",
         "\n",
-        "# Plot\n",
-        "fig, axes = plt.subplots(4, 1, figsize=(12, 10))\n",
-        "\n",
-        "axes[0].plot(ts)\n",
-        "axes[0].set_title(\"Observed\")\n",
-        "\n",
-        "axes[1].plot(decomposition.trend)\n",
-        "axes[1].set_title(\"Trend\")\n",
-        "\n",
-        "axes[2].plot(decomposition.seasonal)\n",
-        "axes[2].set_title(\"Seasonal\")\n",
-        "\n",
-        "axes[3].plot(decomposition.resid)\n",
-        "axes[3].set_title(\"Irregular\")\n",
+        "# Plot the decomposition\n",
+        "decomposition.plot(figsize=(12, 8))\n",
         "\n",
         "plt.tight_layout()\n",
         "plt.show()"
@@ -767,7 +754,7 @@
       "source": [
         ":::"
       ],
-      "id": "889aea05"
+      "id": "3a58f61b"
     }
   ],
   "metadata": {
