@@ -444,6 +444,55 @@ model = sm.OLS(y, X).fit()
 print(model.summary())
 ```
 :::
+  
+## Model Diagnostics and Interpretation
+
+### Model Fit  
+
+**F statistic:**
+  
+The model fit is assessed using the F statistic. The F statistic tests the null hypothesis that all regression coefficients are equal to zero. A significant F statistic indicates that at least one explanatory variable is significantly associated with the dependent variable.
+  
+**🔑Key Takeaway:** The F statistic helps determine if the model as a whole is statistically significant.
+
+### Goodness of Fit
+  
+**R-Squared:**
+    
+The extent to which the model explains the variation in the dependent variable is measured by R-squared. R-squared ranges from 0 to 1, with higher values indicating a better fit. However, R-squared alone does not indicate whether the model is appropriate or whether the coefficients are significant.  
+
+**Adjusted R-Squared:** 
+  
+A fatal flaw with R-squared is that it always increases as more variables are added to the model, even if those variables do not contribute meaningfully.   
+  
+*Adjusted R-squared* accounts for the number of explanatory variables in the model and is a more reliable measure of goodness of fit, especially when comparing models with different numbers of independent variables.
+  
+**🔑Key Takeaway:** R-squared and adjusted R-squared provide insight into how well the model explains the variation in the dependent variable, but they should be interpreted alongside other diagnostic measures.The higher the values, the better the model fits the data.
+  
+**AIC, BIC, and HQIC:**
+  
+Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), and Hannan-Quinn Information Criterion (HQIC) are all used to compare different models. Lower values indicate a better model fit, accounting for the number of parameters in the model.
+
+**🔑Key Takeaway:** AIC, BIC, and HQIC are useful for model selection, with lower values indicating a better balance between model fit and complexity.  
+
+### Summary: Model fit and Goodness of Fit
+  
+| **Metric** | **What does it tell us?** | **How to interpret?** |
+|---|---|---|
+| 📊 **F-statistic** | Tests whether the model is statistically significant **as a whole**. | **Significant F** → at least one explanatory variable is associated with the dependent variable. |
+| 🎯 **R²** | Measures the proportion of variation in the dependent variable explained by the model. | **Higher R²** → greater explanatory power. However, it does **not** establish that the model is appropriate or coefficients are significant. |
+| ⚖️ **Adjusted R²** | R² adjusted for the **number of explanatory variables**. | Useful when comparing models with different numbers of predictors. Unlike R², it does not automatically increase when variables are added. **Higher is generally better.** |
+| 🔎 **AIC** | Compares model fit while penalizing model complexity. | **Lower AIC → preferred model** |
+| 🧮 **BIC** | Similar to AIC but applies a stronger penalty for additional parameters. | **Lower BIC → preferred model** |
+| 📐 **HQIC** | Another information criterion balancing model fit and complexity. | **Lower HQIC → preferred model** |  
+
+## Model Results Interpretation
+
+### Variable Significance
+
+**p-values:** The p values determine the statistical significance of each independent variable. A low p-value (typically < 0.05) indicates that the variable is significantly associated with the dependent variable, while a high p-value suggests that the variable may not be a meaningful predictor.
+
+**Beta coefficients:** The beta coefficients represent the estimated change in the dependent variable for a one-unit change in the independent variable, holding all other variables constant. The sign of the coefficient indicates the direction of the relationship.
 
   
 # Introduction to Forecasting with Time Series

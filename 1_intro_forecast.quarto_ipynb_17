@@ -5,7 +5,7 @@
       "metadata": {},
       "source": [
         "---\n",
-        "title: \"Introduction to Business Forecasting\"\n",
+        "title: \"Introduction to Business Forecasting & Time Series Analysis\"\n",
         "author: \"Dr. Sankalp Purushottam Naik\"\n",
         "\n",
         "format:\n",
@@ -261,7 +261,7 @@
         "\n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "8086590e"
+      "id": "5d9c6ff2"
     },
     {
       "cell_type": "code",
@@ -299,7 +299,7 @@
         "    \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "01bf4c9d"
+      "id": "bdb58f44"
     },
     {
       "cell_type": "code",
@@ -341,7 +341,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "37cf6d54"
+      "id": "b10de49f"
     },
     {
       "cell_type": "code",
@@ -400,7 +400,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "d590d530"
+      "id": "48ab75e7"
     },
     {
       "cell_type": "code",
@@ -440,7 +440,7 @@
         "  \n",
         "::: {.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "44be5f5b"
+      "id": "9fc8663f"
     },
     {
       "cell_type": "code",
@@ -489,7 +489,7 @@
         "  \n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "28e96e7f"
+      "id": "96967d42"
     },
     {
       "cell_type": "code",
@@ -573,7 +573,7 @@
         "\n",
         ":::{.callout-tip title=\"💻Coding Session\"}"
       ],
-      "id": "057fa9e7"
+      "id": "00cf0982"
     },
     {
       "cell_type": "code",
@@ -613,7 +613,7 @@
         "   \n",
         "# 📊 Time-Series Analysis \n",
         "    \n",
-        "# 🔍 Looking Inside a Time Series: Decomposition\n",
+        "## 🔍 Looking Inside a Time Series: Decomposition\n",
         "    \n",
         "A time series is rarely just a collection of random observations.\n",
         "    \n",
@@ -630,7 +630,7 @@
         "  \n",
         "> 💡 **Think of decomposition as taking a complicated time series apart to understand what is happening inside it.**\n",
         "    \n",
-        "## 🧩 The Four Components of a Time Series\n",
+        "### 🧩 The Four Components of a Time Series\n",
         "  \n",
         "| Component | Icon | The question we are asking |\n",
         "|---|---|---|\n",
@@ -638,18 +638,20 @@
         "| **Seasonality** | 🔄 | Does a pattern repeat at a regular frequency? |\n",
         "| **Cycle** | 🌊 | Are there longer-term rises and falls? |\n",
         "| **Irregular** | ⚡ | What unusual movements remain unexplained? |\n",
-        "  \n",
-        " ### 🧠 The Big Picture\n",
+        "    \n",
+        "### 🧠 The Big Picture\n",
         "\n",
         "Think of the observed series as a combination of different patterns:\n",
-        "\n",
+        "  \n",
         "$$\n",
         "\\boxed{\\text{Observed} = \\text{Trend} + \\text{Seasonality} + \\text{Irregular}}\n",
         "$$\n",
-        "\n",
+        "  \n",
+        "*Note:* In some cases, we may also include a **cycle** component, but for simplicity, we will focus on the three main components: trend, seasonality, and irregular (also called randomness or noise or random noise).\n",
+        "  \n",
         "For the moment, we will focus on the **additive decomposition**.\n"
       ],
-      "id": "c36fdd21"
+      "id": "46509810"
     }
   ],
   "metadata": {
