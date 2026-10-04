@@ -20,7 +20,6 @@ execute:
   message: false
 ---
 
-::: {.callout-note}
 
 # Learning Objectives
   
